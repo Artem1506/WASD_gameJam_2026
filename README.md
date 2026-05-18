@@ -95,7 +95,16 @@ fonts/     - шрифты
 
 ## Кодстайл
 
-- `snake_case` для переменных и функций
-- `PascalCase` для систем и менеджеров
-- Один объект — одна ответственность
-- Не дублировать код без необходимости
+| Что                  | Стиль            |
+| -------------------- | ---------------- |
+| Скрипты / функции    | camelCase        |
+| Локальные переменные | snake_case       |
+| Объекты              | obj_PascalCase   |
+| Константы            | UPPER_SNAKE_CASE |
+| enum                 | PascalCase       |
+| Макросы              | UPPER_SNAKE_CASE |
+| Ресурсы (спрайты)    | spr_camelCase    |
+| Шейдеры              | shd_camelCase    |
+| Звуки                | snd_camelCase    |
+| UI                   | ui_camelCase     |
+
