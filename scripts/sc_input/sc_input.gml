@@ -1,8 +1,12 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+function sc_handleInput()
+{
+    sc_addInputCommand();
+    sc_processInputQueue();
+}
+
 function sc_addInputCommand()
 {
-	var input_x = 0;
+    var input_x = 0;
     var input_y = 0;
 
     var pressed = false;
@@ -55,4 +59,22 @@ function sc_addInputCommand()
     };
 
     array_push(input_queue, command);
+}
+
+function sc_processInputQueue()
+{
+    if (array_length(input_queue) <= 0)
+    {
+        exit;
+    }
+
+    var command = input_queue[0];
+
+    if (current_time >= command.execute_time)
+    {
+        next_dir_x = command.dir_x;
+        next_dir_y = command.dir_y;
+
+        array_delete(input_queue, 0, 1);
+    }
 }

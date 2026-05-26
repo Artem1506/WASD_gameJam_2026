@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"sc_checkWallCollision",
+  "%Name":"sc_grapes",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"sc_checkWallCollision",
+  "name":"sc_grapes",
   "parent":{
     "name":"scripts",
     "path":"folders/scripts.yy",

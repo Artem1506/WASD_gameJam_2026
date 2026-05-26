@@ -3,7 +3,7 @@
 
 move_timer = 0;
 
-move_delay = 0.15;
+move_delay = global.var_snake_initial_speed;
 
 dir_x = 1;
 dir_y = 0;
@@ -11,7 +11,7 @@ dir_y = 0;
 next_dir_x = dir_x;
 next_dir_y = dir_y;
 
-segment_count = 10;
+segment_count = global.var_snake_initial_segments;
 
 segments = [];
 

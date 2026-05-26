@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"sc_eatFreshGrape",
+  "%Name":"sc_input",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"sc_eatFreshGrape",
+  "name":"sc_input",
   "parent":{
     "name":"scripts",
     "path":"folders/scripts.yy",

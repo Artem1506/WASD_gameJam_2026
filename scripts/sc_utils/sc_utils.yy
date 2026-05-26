@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"sc_updateSnake",
+  "%Name":"sc_utils",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"sc_updateSnake",
+  "name":"sc_utils",
   "parent":{
     "name":"scripts",
     "path":"folders/scripts.yy",

@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"sc_addInputCommand",
+  "%Name":"sc_snake",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"sc_addInputCommand",
+  "name":"sc_snake",
   "parent":{
     "name":"scripts",
     "path":"folders/scripts.yy",
