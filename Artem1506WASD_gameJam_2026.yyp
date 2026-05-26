@@ -42,6 +42,7 @@
     {"id":{"name":"sc_gridToPixel","path":"scripts/sc_gridToPixel/sc_gridToPixel.yy",},},
     {"id":{"name":"sc_handleInput","path":"scripts/sc_handleInput/sc_handleInput.yy",},},
     {"id":{"name":"sc_pixelToGrid","path":"scripts/sc_pixelToGrid/sc_pixelToGrid.yy",},},
+    {"id":{"name":"sc_processInputQueue","path":"scripts/sc_processInputQueue/sc_processInputQueue.yy",},},
     {"id":{"name":"sc_spawnRandomPosition","path":"scripts/sc_spawnRandomPosition/sc_spawnRandomPosition.yy",},},
     {"id":{"name":"sc_updateSnake","path":"scripts/sc_updateSnake/sc_updateSnake.yy",},},
     {"id":{"name":"spr_grapeFresh","path":"sprites/spr_grapeFresh/spr_grapeFresh.yy",},},
