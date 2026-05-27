@@ -34,6 +34,11 @@ for (var i = 0; i < segment_count; i++)
     seg.grid_x = grid_x - (i + 1);
     seg.grid_y = grid_y;
 
+    // Начальный поворот сегментов тела змейки
+    seg.image_angle = point_direction(0, 0, dir_x, dir_y);
+    seg.rotation_start_angle = seg.image_angle;
+    seg.rotation_target_angle = seg.image_angle;
+
     array_push(segments, seg);
 }
 

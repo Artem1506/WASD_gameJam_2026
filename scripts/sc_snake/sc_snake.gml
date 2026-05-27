@@ -63,6 +63,8 @@ function sc_updateSnake()
     x = global.arena_left + grid_x * global.grid_size;
     y = global.arena_top + grid_y * global.grid_size;
 
+    var prev_target_angle = rotation_target_angle; // Целевой угол головы (уже обновленный на этом шаге)
+
     for (var i = 0; i < array_length(segments); i++)
     {
         var seg = segments[i];
@@ -75,6 +77,23 @@ function sc_updateSnake()
 
         seg.x = global.arena_left + seg.grid_x * global.grid_size;
         seg.y = global.arena_top + seg.grid_y * global.grid_size;
+
+        // Сохраняем целевой угол текущего сегмента до его обновления на этом шаге
+        var old_seg_target = seg.rotation_target_angle;
+
+        // Целевым углом для сегмента становится целевой угол предыдущего элемента
+        var new_target = prev_target_angle;
+
+        if (new_target != seg.rotation_target_angle)
+        {
+            seg.rotation_start_angle = seg.image_angle;
+            seg.rotation_target_angle = new_target;
+            seg.rotation_timer = 0;
+            seg.is_rotating = true;
+        }
+
+        // Для следующего сегмента предыдущим целевым углом будет старый целевой угол текущего
+        prev_target_angle = old_seg_target;
 
         prev_x = temp_x;
         prev_y = temp_y;
