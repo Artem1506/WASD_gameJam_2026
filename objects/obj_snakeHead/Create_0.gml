@@ -36,3 +36,10 @@ for (var i = 0; i < segment_count; i++)
 
     array_push(segments, seg);
 }
+
+// Инициализация угла и параметров анимации поворота
+image_angle = point_direction(0, 0, dir_x, dir_y);
+is_rotating = false;
+rotation_start_angle = image_angle;
+rotation_target_angle = image_angle;
+rotation_timer = 0;

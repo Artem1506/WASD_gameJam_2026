@@ -1,11 +1,23 @@
 function sc_updateSnake()
 {
+    var old_dir_x = dir_x;
+    var old_dir_y = dir_y;
+
     dir_x = next_dir_x;
     dir_y = next_dir_y;
 
     if (dir_x == 0 && dir_y == 0)
     {
         exit;
+    }
+
+    // Если направление изменилось, запускаем анимацию поворота головы
+    if (dir_x != old_dir_x || dir_y != old_dir_y)
+    {
+        rotation_start_angle = image_angle;
+        rotation_target_angle = point_direction(0, 0, dir_x, dir_y);
+        rotation_timer = 0;
+        is_rotating = true;
     }
 
     var next_grid_x = grid_x + dir_x;
@@ -69,6 +81,7 @@ function sc_updateSnake()
 	
     sc_eatFreshGrape();
     sc_eatRottenGrape();
+    sc_eatPill();
 }
 
 function sc_checkWallCollision(next_x, next_y)

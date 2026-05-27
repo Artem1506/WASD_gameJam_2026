@@ -45,9 +45,24 @@ function sc_spawnRandomPosition()
         // rotten grapes
         with (obj_grapeRotten)
         {
-            if (other.grid_x == grid_x && other.grid_y == grid_y)
+            if (id != other.id)
             {
-                valid = false;
+                if (other.grid_x == grid_x && other.grid_y == grid_y)
+                {
+                    valid = false;
+                }
+            }
+        }
+
+        // pills
+        with (obj_pill)
+        {
+            if (id != other.id)
+            {
+                if (other.grid_x == grid_x && other.grid_y == grid_y)
+                {
+                    valid = false;
+                }
             }
         }
 
@@ -75,7 +90,7 @@ function sc_eatFreshGrape()
                 other.move_delay - global.var_speed_increment
             );
 
-            if (global.var_score % 5 == 0)
+            if (global.var_score % global.var_score_speed_threshold == 0)
             {
                 global.var_life_time -= global.var_life_time_decrement;
 
@@ -109,6 +124,24 @@ function sc_eatRottenGrape()
         )
         {
             global.var_input_lag += global.var_input_lag_increment;
+
+            instance_destroy();
+
+            break;
+        }
+    }
+}
+
+function sc_eatPill()
+{
+    with (obj_pill)
+    {
+        if (
+            other.grid_x == grid_x
+            && other.grid_y == grid_y
+        )
+        {
+            global.var_input_lag = max(0, global.var_input_lag - (global.var_input_lag_increment * 3));
 
             instance_destroy();
 
