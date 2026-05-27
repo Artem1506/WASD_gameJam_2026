@@ -125,6 +125,8 @@ function sc_eatRottenGrape()
         {
             global.var_input_lag += global.var_input_lag_increment;
 
+            other.move_delay += global.var_speed_increment_2;
+
             instance_destroy();
 
             break;

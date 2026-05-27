@@ -35,6 +35,7 @@ function sc_updateSnake()
         input_queue = [];
         
         global.var_input_lag += global.var_input_lag_increment;
+        move_delay += global.var_speed_increment_2;
         exit;
     }
 
