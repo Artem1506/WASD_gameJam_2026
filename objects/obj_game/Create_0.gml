@@ -15,6 +15,7 @@ global.var_input_lag_increment = 0.1;
 global.var_input_lag_threshold = 1.5;
 
 global.var_speed_increment = 0.005;
+global.var_speed_increment_2 = 0.01;
 
 global.var_life_time = 5;
 global.var_life_time_min = 1.0;
