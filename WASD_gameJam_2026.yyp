@@ -63,6 +63,7 @@
     {"id":{"name":"spr_snakeHead","path":"sprites/spr_snakeHead/spr_snakeHead.yy",},},
     {"id":{"name":"spr_snakeSegment","path":"sprites/spr_snakeSegment/spr_snakeSegment.yy",},},
     {"id":{"name":"spr_wall","path":"sprites/spr_wall/spr_wall.yy",},},
+    {"id":{"name":"ui_inputLagBar","path":"sprites/ui_inputLagBar/ui_inputLagBar.yy",},},
     {"id":{"name":"ui_score","path":"sprites/ui_score/ui_score.yy",},},
   ],
   "resourceType":"GMProject",

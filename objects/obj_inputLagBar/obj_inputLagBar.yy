@@ -29,7 +29,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"ui_inputLagBar",
+    "path":"sprites/ui_inputLagBar/ui_inputLagBar.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

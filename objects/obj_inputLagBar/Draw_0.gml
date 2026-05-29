@@ -1,8 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-var max_width = 256;
-var bar_height = 64;
+draw_self();
+
+var max_width = 196;
+var bar_height = 18;
 
 // нормализуем lag
 var t =
@@ -27,12 +29,16 @@ var col = make_color_rgb(r, g, b);
 // задаем вычисленный цвет
 draw_set_color(col);
 
+// Вычисляем координаты отрисовки относительно точки ориджин самого объекта
+var draw_x = x + 64;
+var draw_y = y + 40;
+
 // рисуем прямоугольник
 draw_rectangle(
-    x,
-    y,
-    x + bar_width,
-    y + bar_height,
+    draw_x,
+    draw_y,
+    draw_x + bar_width,
+    draw_y + bar_height,
     false
 );
 
