@@ -54,6 +54,8 @@
     {"id":{"name":"snd_eatRottenB","path":"sounds/snd_eatRottenB/snd_eatRottenB.yy",},},
     {"id":{"name":"snd_eatRottenC","path":"sounds/snd_eatRottenC/snd_eatRottenC.yy",},},
     {"id":{"name":"snd_eatRottenD","path":"sounds/snd_eatRottenD/snd_eatRottenD.yy",},},
+    {"id":{"name":"snd_musicLoop","path":"sounds/snd_musicLoop/snd_musicLoop.yy",},},
+    {"id":{"name":"snd_musicLoopIntro","path":"sounds/snd_musicLoopIntro/snd_musicLoopIntro.yy",},},
     {"id":{"name":"spr_bgMain","path":"sprites/spr_bgMain/spr_bgMain.yy",},},
     {"id":{"name":"spr_grapeFresh","path":"sprites/spr_grapeFresh/spr_grapeFresh.yy",},},
     {"id":{"name":"spr_grapeRotten","path":"sprites/spr_grapeRotten/spr_grapeRotten.yy",},},
