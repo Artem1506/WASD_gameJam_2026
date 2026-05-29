@@ -34,8 +34,8 @@ global.arena_height_cells = 19;
 // Таймер спавна восстановительной таблетки
 pill_spawn_timer = irandom_range(30, 60);
 
-instance_create_layer(760, 260, "Instances", obj_snakeHead);
-
 instance_create_layer(0, 0, "Instances", obj_grapeFresh);
+
+instance_create_layer(0, 0, "Instances", obj_snakeHead);
 
 surf_game = -1;

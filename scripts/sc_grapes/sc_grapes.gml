@@ -85,6 +85,12 @@ function sc_eatFreshGrape()
         {
             global.var_score += 1;
 
+            // Воспроизводим звук съедания свежего винограда через аудио-менеджер
+            with (obj_audioManger)
+            {
+                play_eat_fresh();
+            }
+
             other.move_delay = max(
                 global.var_move_delay_min,
                 other.move_delay - global.var_speed_increment
@@ -127,6 +133,12 @@ function sc_eatRottenGrape()
 
             other.move_delay += global.var_speed_increment_2;
 
+            // Воспроизводим звук съедания испорченного винограда через аудио-менеджер
+            with (obj_audioManger)
+            {
+                play_eat_rotten();
+            }
+
             instance_destroy();
 
             break;
@@ -144,6 +156,12 @@ function sc_eatPill()
         )
         {
             global.var_input_lag = max(0, global.var_input_lag - (global.var_input_lag_increment * 3));
+
+            // Воспроизводим звук съедания таблетки/пилюли через аудио-менеджер
+            with (obj_audioManger)
+            {
+                play_eat_pill();
+            }
 
             instance_destroy();
 
