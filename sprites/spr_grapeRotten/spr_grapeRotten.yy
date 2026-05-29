@@ -4,22 +4,22 @@
   "bboxMode":0,
   "bbox_bottom":31,
   "bbox_left":0,
-  "bbox_right":31,
-  "bbox_top":0,
+  "bbox_right":30,
+  "bbox_top":1,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"5ac4ee08-c5a5-4f93-a30a-37beada24f30","name":"5ac4ee08-c5a5-4f93-a30a-37beada24f30","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"72c2cbe2-13f2-4f1d-9dcf-d49d8555bfbb","name":"72c2cbe2-13f2-4f1d-9dcf-d49d8555bfbb","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":32,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"2837ed45-ce0d-4e08-bfe2-e0d501b94353","blendMode":0,"displayName":"default","isLocked":false,"name":"2837ed45-ce0d-4e08-bfe2-e0d501b94353","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"c95c13fc-675c-4e7b-a4bc-d2c743c49596","blendMode":0,"displayName":"default","isLocked":false,"name":"c95c13fc-675c-4e7b-a4bc-d2c743c49596","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_grapeRotten",
   "nineSlice":null,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5ac4ee08-c5a5-4f93-a30a-37beada24f30","path":"sprites/spr_grapeRotten/spr_grapeRotten.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"72465e02-a2f5-4ecc-9ccf-daa21b6d2601","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"72c2cbe2-13f2-4f1d-9dcf-d49d8555bfbb","path":"sprites/spr_grapeRotten/spr_grapeRotten.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"c4788833-7a76-48c4-84b8-99475d560d35","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
