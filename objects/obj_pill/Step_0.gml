@@ -7,3 +7,5 @@ if (life_timer >= life_time)
 {
     instance_destroy();
 }
+
+//part_particles_create(ps_pill, 0, 0, )
