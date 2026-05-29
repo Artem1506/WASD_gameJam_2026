@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_eatMedsB.wav",
-  "volume":0.29,
+  "volume":1.0,
 }
