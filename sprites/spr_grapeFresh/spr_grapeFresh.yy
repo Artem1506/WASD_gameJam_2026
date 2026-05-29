@@ -12,18 +12,18 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"v1","%Name":"e9ee44af-faae-4e61-8abe-f429afdec40c","name":"e9ee44af-faae-4e61-8abe-f429afdec40c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"0c4aa956-ee29-406a-b9b4-b836b24ac933","name":"0c4aa956-ee29-406a-b9b4-b836b24ac933","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":32,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"3646ba1c-ea33-4845-9394-61d964774bde","blendMode":0,"displayName":"default","isLocked":false,"name":"3646ba1c-ea33-4845-9394-61d964774bde","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"6b8b1f72-0b19-4b69-80bd-e47a5093e2f0","blendMode":0,"displayName":"default","isLocked":false,"name":"6b8b1f72-0b19-4b69-80bd-e47a5093e2f0","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
   "name":"spr_grapeFresh",
   "nineSlice":null,
-  "origin":4,
+  "origin":0,
   "parent":{
     "name":"spritees",
     "path":"folders/spritees.yy",
@@ -69,14 +69,14 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"e9ee44af-faae-4e61-8abe-f429afdec40c","path":"sprites/spr_grapeFresh/spr_grapeFresh.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"59ba009a-02fb-4e4b-9aa1-df30999e9835","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0c4aa956-ee29-406a-b9b4-b836b24ac933","path":"sprites/spr_grapeFresh/spr_grapeFresh.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"1db42172-03ae-4b91-9311-62b751e04b1c","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":16,
-    "yorigin":16,
+    "xorigin":0,
+    "yorigin":0,
   },
   "swatchColours":null,
   "swfPrecision":0.5,
