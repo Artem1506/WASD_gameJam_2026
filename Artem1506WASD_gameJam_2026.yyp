@@ -48,6 +48,8 @@
     {"id":{"name":"snd_eatFreshB","path":"sounds/snd_eatFreshB/snd_eatFreshB.yy",},},
     {"id":{"name":"snd_eatFreshC","path":"sounds/snd_eatFreshC/snd_eatFreshC.yy",},},
     {"id":{"name":"snd_eatFreshD","path":"sounds/snd_eatFreshD/snd_eatFreshD.yy",},},
+    {"id":{"name":"snd_eatMedsA","path":"sounds/snd_eatMedsA/snd_eatMedsA.yy",},},
+    {"id":{"name":"snd_eatMedsB","path":"sounds/snd_eatMedsB/snd_eatMedsB.yy",},},
     {"id":{"name":"snd_eatRottenA","path":"sounds/snd_eatRottenA/snd_eatRottenA.yy",},},
     {"id":{"name":"snd_eatRottenB","path":"sounds/snd_eatRottenB/snd_eatRottenB.yy",},},
     {"id":{"name":"snd_eatRottenC","path":"sounds/snd_eatRottenC/snd_eatRottenC.yy",},},
