@@ -7,7 +7,7 @@ pressed_style = ui_buttonStartGame_pressed;
 
 is_pressed = false;
 click_snd = snd_click;
-hovered_snd = false;
+hovered_snd = snd_hover;
 
 callback_function = function() {
 	room_goto(rm_main);

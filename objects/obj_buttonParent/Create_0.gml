@@ -7,6 +7,6 @@ pressed_style = noone;
 
 is_pressed = false;
 click_snd = snd_click;
-hovered_snd = false;
+hovered_snd = snd_hover;
 
 callback_function = noone;
