@@ -14,7 +14,7 @@
   "name":"ps_pill",
   "parent":{
     "name":"particles",
-    "path":"folders/objects/particles.yy",
+    "path":"folders/particles.yy",
   },
   "resourceType":"GMParticleSystem",
   "resourceVersion":"2.0",

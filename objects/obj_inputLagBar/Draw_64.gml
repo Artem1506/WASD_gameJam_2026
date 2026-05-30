@@ -1,6 +1,5 @@
-/// @description Insert description here
-// You can write your code in this editor
-
+/// @description Отрисовка шкалы лага
+// Отрисовка элементов HUD
 
 draw_self();
 
@@ -8,9 +7,7 @@ var max_width = 196;
 var bar_height = 18;
 
 // нормализуем lag
-var t =
-    global.var_input_lag
-    / global.var_input_lag_threshold;
+var t = global.var_input_lag / global.var_input_lag_threshold;
 
 // ограничиваем диапазон
 t = clamp(t, 0, 1);

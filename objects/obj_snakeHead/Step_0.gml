@@ -25,15 +25,24 @@ if (is_rotating)
     }
 }
 
-move_timer += delta_time / 1000000;
+// Отсчитываем таймер стартовой задержки, если он еще не истек
+if (start_delay_timer > 0)
+{
+    start_delay_timer -= delta_time / 1000000;
+}
+else
+{
+    move_timer += delta_time / 1000000;
+}
 
-sc_handleInput();
-
-if (global.var_input_lag >= global.var_input_lag_threshold)
+// Ввод доступен только если лаг ввода не достиг критического порога (Game Over)
+if (global.var_input_lag < global.var_input_lag_threshold)
+{
+    sc_handleInput();
+}
+else
 {
     show_debug_message("GAME OVER");
-
-    //instance_destroy();
 }
 
 if (move_timer >= move_delay)

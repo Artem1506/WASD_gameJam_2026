@@ -5,12 +5,8 @@ surface_reset_target();
 
 shader_set(sh_inputLag);
 
-var _time =
-    current_time * 0.001;
-
-var _lag =
-    global.var_input_lag;
-
+var _time = current_time * 0.001;
+var _lag = global.var_input_lag;
 var _shader = sh_inputLag;
 
 shader_set_uniform_f(
