@@ -1,5 +1,8 @@
 function sc_updateSnake()
 {
+    // Обрабатываем очередь команд строго в момент совершения шага змейкой
+    sc_processInputQueue();
+
     var old_dir_x = dir_x;
     var old_dir_y = dir_y;
 

@@ -10,9 +10,3 @@ click_snd = snd_click;
 hovered_snd = false;
 
 callback_function = noone;
-
-
-/*event_inherited();
-callback_function = function() {
-	spawn_text = true;
-}

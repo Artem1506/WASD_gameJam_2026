@@ -1,7 +1,6 @@
 function sc_handleInput()
 {
     sc_addInputCommand();
-    sc_processInputQueue();
 }
 
 function sc_addInputCommand()
@@ -40,10 +39,21 @@ function sc_addInputCommand()
         exit;
     }
 
-    // запрет разворота
+    // Вычисляем последнее запланированное направление змейки в очереди (или текущее, если очередь пуста)
+    var last_dir_x = dir_x;
+    var last_dir_y = dir_y;
+    var q_size = array_length(input_queue);
+    if (q_size > 0)
+    {
+        var last_cmd = input_queue[q_size - 1];
+        last_dir_x = last_cmd.dir_x;
+        last_dir_y = last_cmd.dir_y;
+    }
+
+    // Запрет разворота на 180 градусов относительно последнего запланированного вектора движения
     if (
-        input_x == -dir_x
-        && input_y == -dir_y
+        input_x == -last_dir_x
+        && input_y == -last_dir_y
     )
     {
         exit;
