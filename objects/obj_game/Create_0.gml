@@ -14,12 +14,12 @@ global.var_input_lag = 0;
 global.var_input_lag_increment = 0.1;
 global.var_input_lag_threshold = 1.5;
 
-global.var_speed_increment = 0.005;
-global.var_speed_increment_2 = 0.01;
+global.var_speed_increment = 0.005;  //увеличение скорости при хорошем фрукте
+global.var_speed_increment_2 = 0.01; //уменьшение скорости при столкновении
 
-global.var_life_time = 5;
+global.var_life_time = 6;
 global.var_life_time_min = 1.0;
-global.var_life_time_decrement = 0.25;
+global.var_life_time_decrement = 0.15;
 global.var_score_speed_threshold = 5; // Порог очков для ускорения порчи ягод
 
 // Новые балансные переменные
@@ -38,10 +38,10 @@ instance_create_layer(0, 0, "Instances", obj_grapeFresh);
 
 // ============================================================================
 // ВНИМАНИЕ: СЛЕДУЮЩАЯ СТРОКА СОЗДАЕТ И НАЧАЛЬНО СПАВНИТ ГОЛОВУ ЗМЕЙКИ.
-// Первоначальные координаты (0, 0) передаются здесь, но реальное позиционирование
-// на сетке арены происходит в Create-событии самого объекта obj_snakeHead.
+// Теперь голова спавнится в координатах самого объекта obj_game (x, y),
+// что позволяет свободно перемещать obj_game в редакторе комнат для изменения спавна!
 // ============================================================================
-instance_create_layer(0, 0, "Instances", obj_snakeHead);
+instance_create_layer(x, y, "Instances", obj_snakeHead);
 // ============================================================================
 
 surf_game = -1;

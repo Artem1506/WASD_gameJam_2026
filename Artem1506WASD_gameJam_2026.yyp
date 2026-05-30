@@ -41,6 +41,8 @@
     {"id":{"name":"obj_wall","path":"objects/obj_wall/obj_wall.yy",},},
     {"id":{"name":"ps_pill","path":"particles/ps_pill/ps_pill.yy",},},
     {"id":{"name":"rm_main","path":"rooms/rm_main/rm_main.yy",},},
+    {"id":{"name":"rm_result","path":"rooms/rm_result/rm_result.yy",},},
+    {"id":{"name":"rm_start","path":"rooms/rm_start/rm_start.yy",},},
     {"id":{"name":"sc_grapes","path":"scripts/sc_grapes/sc_grapes.yy",},},
     {"id":{"name":"sc_input","path":"scripts/sc_input/sc_input.yy",},},
     {"id":{"name":"sc_snake","path":"scripts/sc_snake/sc_snake.yy",},},
@@ -59,6 +61,7 @@
     {"id":{"name":"snd_musicLoop","path":"sounds/snd_musicLoop/snd_musicLoop.yy",},},
     {"id":{"name":"snd_musicLoopIntro","path":"sounds/snd_musicLoopIntro/snd_musicLoopIntro.yy",},},
     {"id":{"name":"spr_bgMain","path":"sprites/spr_bgMain/spr_bgMain.yy",},},
+    {"id":{"name":"spr_bgStart","path":"sprites/spr_bgStart/spr_bgStart.yy",},},
     {"id":{"name":"spr_grapeFresh","path":"sprites/spr_grapeFresh/spr_grapeFresh.yy",},},
     {"id":{"name":"spr_grapeRotten","path":"sprites/spr_grapeRotten/spr_grapeRotten.yy",},},
     {"id":{"name":"spr_pill","path":"sprites/spr_pill/spr_pill.yy",},},
@@ -72,6 +75,8 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_main","path":"rooms/rm_main/rm_main.yy",},},
+    {"roomId":{"name":"rm_start","path":"rooms/rm_start/rm_start.yy",},},
+    {"roomId":{"name":"rm_result","path":"rooms/rm_result/rm_result.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[

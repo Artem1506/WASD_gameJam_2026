@@ -17,9 +17,11 @@ segments = [];
 
 input_queue = [];
 
-grid_x = 3;
-grid_y = 3;
+// Вычисляем начальные координаты на сетке арены на основе переданных x и y при создании
+grid_x = floor((x - global.arena_left) / global.grid_size);
+grid_y = floor((y - global.arena_top) / global.grid_size);
 
+// Корректируем координаты x и y объекта для точного выравнивания по сетке
 x = global.arena_left + grid_x * global.grid_size;
 y = global.arena_top + grid_y * global.grid_size;
 
