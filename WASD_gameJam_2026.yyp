@@ -51,6 +51,7 @@
     {"id":{"name":"sh_blackout","path":"shaders/sh_blackout/sh_blackout.yy",},},
     {"id":{"name":"sh_inputLag","path":"shaders/sh_inputLag/sh_inputLag.yy",},},
     {"id":{"name":"snd_click","path":"sounds/snd_click/snd_click.yy",},},
+    {"id":{"name":"snd_collision","path":"sounds/snd_collision/snd_collision.yy",},},
     {"id":{"name":"snd_eatFreshA","path":"sounds/snd_eatFreshA/snd_eatFreshA.yy",},},
     {"id":{"name":"snd_eatFreshB","path":"sounds/snd_eatFreshB/snd_eatFreshB.yy",},},
     {"id":{"name":"snd_eatFreshC","path":"sounds/snd_eatFreshC/snd_eatFreshC.yy",},},
