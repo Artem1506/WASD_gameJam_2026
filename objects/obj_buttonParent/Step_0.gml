@@ -14,7 +14,7 @@ if (point_in_rectangle(mouse_x, mouse_y, x, y, x + sprite_width, y + sprite_heig
 					}
 			} else if (!mouse_check_button(mb_left)) {
 				if (sprite_index != hovered_style) {
-					audio_play_sound(hovered_snd, 10, false); }
+					audio_play_sound(hovered_snd, 10, false, 0.1); }
 				sprite_index = hovered_style;
 			}
 	} else {
