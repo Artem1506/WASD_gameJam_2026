@@ -5,8 +5,8 @@ global.grid_size = 32;
 
 global.arena_left   = 64;
 global.arena_top    = 64;
-global.arena_right  = 1280 - 64;
-global.arena_bottom = 720 - 96;
+global.arena_right  = 1280 - 32; 
+global.arena_bottom = 720 - 80;
 
 global.var_score = 0;
 
@@ -29,7 +29,7 @@ global.var_move_delay_min = 0.03;
 
 // Размеры сетки арены
 global.arena_width_cells = 36;
-global.arena_height_cells = 19;
+global.arena_height_cells = 18;
 
 // Таймер спавна восстановительной таблетки
 pill_spawn_timer = irandom_range(30, 60);

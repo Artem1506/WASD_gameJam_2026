@@ -29,8 +29,8 @@ function sc_updateSnake()
     // Проверяем столкновение со стеной
     if (sc_checkWallCollision(next_grid_x, next_grid_y))
     {
-        show_debug_message("wall collision");
-        
+        audio_play_sound(snd_collision, 1, false);
+		
         dir_x = 0;
         dir_y = 0;
         next_dir_x = 0;
@@ -45,8 +45,8 @@ function sc_updateSnake()
     // Проверяем столкновение с хвостом
     if (sc_checkTailCollision(next_grid_x, next_grid_y))
     {
-        show_debug_message("tail collision");
-        
+        audio_play_sound(snd_collision, 1, false);
+		
         dir_x = 0;
         dir_y = 0;
         next_dir_x = 0;
