@@ -67,6 +67,7 @@
     {"id":{"name":"snd_hover","path":"sounds/snd_hover/snd_hover.yy",},},
     {"id":{"name":"snd_musicLoop","path":"sounds/snd_musicLoop/snd_musicLoop.yy",},},
     {"id":{"name":"snd_musicLoopIntro","path":"sounds/snd_musicLoopIntro/snd_musicLoopIntro.yy",},},
+    {"id":{"name":"snd_startRoomAmb","path":"sounds/snd_startRoomAmb/snd_startRoomAmb.yy",},},
     {"id":{"name":"spr_bgMain","path":"sprites/spr_bgMain/spr_bgMain.yy",},},
     {"id":{"name":"spr_bgStart","path":"sprites/spr_bgStart/spr_bgStart.yy",},},
     {"id":{"name":"spr_grapeFresh","path":"sprites/spr_grapeFresh/spr_grapeFresh.yy",},},
