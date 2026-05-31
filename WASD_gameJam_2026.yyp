@@ -65,6 +65,7 @@
     {"id":{"name":"snd_eatRottenD","path":"sounds/snd_eatRottenD/snd_eatRottenD.yy",},},
     {"id":{"name":"snd_grapeSpawn","path":"sounds/snd_grapeSpawn/snd_grapeSpawn.yy",},},
     {"id":{"name":"snd_hover","path":"sounds/snd_hover/snd_hover.yy",},},
+    {"id":{"name":"snd_medsSpawn","path":"sounds/snd_medsSpawn/snd_medsSpawn.yy",},},
     {"id":{"name":"snd_musicLoop","path":"sounds/snd_musicLoop/snd_musicLoop.yy",},},
     {"id":{"name":"snd_musicLoopIntro","path":"sounds/snd_musicLoopIntro/snd_musicLoopIntro.yy",},},
     {"id":{"name":"snd_startRoomAmb","path":"sounds/snd_startRoomAmb/snd_startRoomAmb.yy",},},
