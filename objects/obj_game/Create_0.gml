@@ -28,7 +28,7 @@ global.var_snake_initial_segments = 10;
 global.var_move_delay_min = 0.03;
 
 // Размеры сетки арены
-global.arena_width_cells = 36;
+global.arena_width_cells = 37;
 global.arena_height_cells = 18;
 
 // Таймер спавна восстановительной таблетки

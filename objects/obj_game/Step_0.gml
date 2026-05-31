@@ -16,9 +16,8 @@ if (!instance_exists(obj_pill))
 }
 
 // Если лаг ввода превысил критический порог и таймер еще не запущен
-if (global.var_input_lag >= global.var_input_lag_threshold)
-{
-    if (game_over_timer == -1)
+if (global.var_input_lag >= global.var_input_lag_threshold){
+	if (game_over_timer == -1)
     {
         game_over_timer = 5.0; // Запускаем 5-секундный таймер
     }
@@ -31,6 +30,6 @@ if (game_over_timer > 0)
     if (game_over_timer <= 0)
     {
         // Переход в комнату результатов
-        room_goto(rm_result);
+        //room_goto(rm_result);
     }
 }

@@ -51,3 +51,9 @@ if (move_timer >= move_delay)
 
     sc_updateSnake();
 }
+
+// конец игры
+if (global.var_input_lag >= global.var_input_lag_threshold){
+	move_delay = 10;
+	// todo вщбавить анимацию менять спрайт змейки
+}
