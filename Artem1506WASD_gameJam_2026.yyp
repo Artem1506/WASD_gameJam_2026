@@ -51,6 +51,7 @@
     {"id":{"name":"sc_utils","path":"scripts/sc_utils/sc_utils.yy",},},
     {"id":{"name":"sh_blackout","path":"shaders/sh_blackout/sh_blackout.yy",},},
     {"id":{"name":"sh_inputLag","path":"shaders/sh_inputLag/sh_inputLag.yy",},},
+    {"id":{"name":"snd_blackoutAmb","path":"sounds/snd_blackoutAmb/snd_blackoutAmb.yy",},},
     {"id":{"name":"snd_click","path":"sounds/snd_click/snd_click.yy",},},
     {"id":{"name":"snd_collision","path":"sounds/snd_collision/snd_collision.yy",},},
     {"id":{"name":"snd_eatFreshA","path":"sounds/snd_eatFreshA/snd_eatFreshA.yy",},},
@@ -86,8 +87,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"rm_main","path":"rooms/rm_main/rm_main.yy",},},
     {"roomId":{"name":"rm_start","path":"rooms/rm_start/rm_start.yy",},},
+    {"roomId":{"name":"rm_main","path":"rooms/rm_main/rm_main.yy",},},
     {"roomId":{"name":"rm_result","path":"rooms/rm_result/rm_result.yy",},},
   ],
   "templateType":"game",

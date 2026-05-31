@@ -30,6 +30,6 @@ if (game_over_timer > 0)
     if (game_over_timer <= 0)
     {
         // Переход в комнату результатов
-        //room_goto(rm_result);
+        room_goto(rm_result);
     }
 }
