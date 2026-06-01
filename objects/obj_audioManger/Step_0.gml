@@ -4,9 +4,9 @@
 if (room != current_playing_room)
 {
     // Гарантированно и принудительно останавливаем проигрывание всех фоновых ассетов звуков
-    if (audio_exists(snd_startRoomAmb))
+    if (audio_exists(snd_startRoomMusic))
     {
-        audio_stop_sound(snd_startRoomAmb);
+        audio_stop_sound(snd_startRoomMusic);
     }
     if (audio_exists(snd_musicLoopIntro))
     {
@@ -85,12 +85,12 @@ else if (room == rm_result)
 }
 else if (room == rm_start)
 {
-    // Воспроизведение зацикленного snd_startRoomAmb для стартового меню
+    // Воспроизведение зацикленного snd_startRoomMusic для стартового меню
     if (current_music_sound_id == -1 || !audio_is_playing(current_music_sound_id))
     {
-        if (audio_exists(snd_startRoomAmb))
+        if (audio_exists(snd_startRoomMusic))
         {
-            current_music_sound_id = audio_play_sound(snd_startRoomAmb, 10, true);
+            current_music_sound_id = audio_play_sound(snd_startRoomMusic, 10, true);
         }
     }
 }
