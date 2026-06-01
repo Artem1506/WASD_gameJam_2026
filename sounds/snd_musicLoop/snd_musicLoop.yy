@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_musicLoop.wav",
-  "volume":0.27,
+  "volume":0.45,
 }

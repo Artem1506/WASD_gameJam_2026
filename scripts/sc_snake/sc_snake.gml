@@ -45,7 +45,7 @@ function sc_updateSnake()
     // Проверяем столкновение с хвостом
     if (sc_checkTailCollision(next_grid_x, next_grid_y))
     {
-        audio_play_sound(snd_collision, 1, false, 1, 0.7); // при столкновения с хвостом звонкий удар столкновения не проигрывается 
+        audio_play_sound(snd_collision, 1, false, 1, 0.34); // при столкновения с хвостом звонкий удар столкновения не проигрывается 
 		
         dir_x = 0;
         dir_y = 0;
