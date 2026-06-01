@@ -1,6 +1,6 @@
 /// @description Отрисовка таблицы рекордов
 
-draw_set_font(f_score);
+draw_set_font(f_textRus);
 draw_set_halign(fa_center);
 draw_set_valign(fa_top);
 
@@ -9,13 +9,13 @@ var text_color = c_white;
 
 // Отрисовка заголовка таблицы рекордов по центру
 draw_set_color(title_color);
-draw_text(640, 200, "ТАБЛИЦА РЕКОРДОВ");
+draw_text(x, y, "ТАБЛИЦА РЕКОРДОВ");
 
 draw_set_halign(fa_left);
 draw_set_color(text_color);
 
-var start_x = 480;
-var start_y = 260;
+var start_x = x + 50;
+var start_y = y + 50;
 var spacing = 45;
 
 // Отрисовка 5 строк таблицы рекордов по колонкам
