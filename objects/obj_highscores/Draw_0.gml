@@ -1,24 +1,25 @@
 /// @description Отрисовка таблицы рекордов
 
-draw_set_font(f_textRus);
 draw_set_halign(fa_center);
 draw_set_valign(fa_top);
 
-var title_color = make_color_rgb(255, 215, 0); // Красивый золотой цвет
 var text_color = c_white;
 
 // Отрисовка заголовка таблицы рекордов по центру
-draw_set_color(title_color);
-draw_text(x, y, "ТАБЛИЦА РЕКОРДОВ");
+draw_set_color(text_color);
+draw_set_font(f_textRus)
+draw_text(x + 200, y, "ТАБЛИЦА РЕКОРДОВ:");
 
 draw_set_halign(fa_left);
 draw_set_color(text_color);
 
-var start_x = x + 50;
+var start_x = x + 80;
 var start_y = y + 50;
 var spacing = 45;
 
 // Отрисовка 5 строк таблицы рекордов по колонкам
+draw_set_font(f_score);
+
 for (var i = 0; i < 5; i++)
 {
     if (i < array_length(highscores))

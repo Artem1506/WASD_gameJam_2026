@@ -9,13 +9,15 @@ draw_set_color(c_white);
 draw_text(x, y, "ТВОЙ РЕЗУЛЬТАТ");
 
 draw_set_color(make_color_rgb(0, 255, 128)); // Сочный мятно-зеленый цвет для счета
-draw_text(x + 100, y, string(session_score));
+draw_set_font(f_score);
+draw_text(x + 180, y - 10, string(session_score));
 
 // 2. Отрисовка интерактивного поля ввода имени при попадании в топ-5
 if (is_entering_name)
 {
     draw_set_color(make_color_rgb(255, 100, 100)); // Выделяющийся цвет для поздравления
-    draw_text(x + 100, y - 100, "НОВЫЙ РЕКОРД!");
+    draw_set_font(f_textRus);
+	draw_text(x + 180, y - 70, "НОВЫЙ РЕКОРД!");
     
     draw_set_color(c_white);
     var display_name = entered_name;
@@ -31,5 +33,5 @@ if (is_entering_name)
         formatted_name += string_char_at(display_name, i) + " ";
     }
     
-    draw_text(x + 200, y, "ВВЕДИТЕ ИМЯ: " + formatted_name);
+    draw_text(x + 380, y, "ВВЕДИТЕ ИМЯ: " + formatted_name);
 }
