@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_gameOver.wav",
-  "volume":0.42,
+  "volume":0.43,
 }
