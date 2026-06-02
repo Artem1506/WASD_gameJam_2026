@@ -25,6 +25,17 @@ if (is_rotating)
     }
 }
 
+// Обновление индекса кадра анимации звезд при столкновении
+if (show_stars)
+{
+    stars_index += 5 * (delta_time / 1000000);
+    var _frames = sprite_get_number(spr_transparentStars);
+    if (_frames > 0)
+    {
+        stars_index = stars_index % _frames;
+    }
+}
+
 // Отсчитываем таймер стартовой задержки, если он еще не истек
 if (start_delay_timer > 0)
 {

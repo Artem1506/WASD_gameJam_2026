@@ -20,8 +20,13 @@ if (global.var_input_lag >= global.var_input_lag_threshold){
 	if (game_over_timer == -1)
     {
         game_over_timer = 5.0; // Запускаем 5-секундный таймер
+<<<<<<< Updated upstream
 		audio_play_sound(snd_gameOver, 100, false); 
 		audio_sound_gain(obj_audioManger.loop_sound_id, 0, 500); 
+=======
+		audio_stop_sound(snd_musicLoop);
+		audio_play_sound(snd_gameOver, 100, false);    
+>>>>>>> Stashed changes
 	}
 }
 

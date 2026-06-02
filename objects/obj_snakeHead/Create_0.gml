@@ -53,3 +53,7 @@ is_rotating = false;
 rotation_start_angle = image_angle;
 rotation_target_angle = image_angle;
 rotation_timer = 0;
+
+// Переменные для анимации звезд при столкновении
+show_stars = false;
+stars_index = 0;

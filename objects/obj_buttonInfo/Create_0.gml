@@ -12,5 +12,7 @@ scroll_speed = 32;
 show_info = false;
 
 callback_function = function() {
-	show_info = true;
+	if (show_info == false) {
+		show_info = true}
+	else {show_info = false}
 }

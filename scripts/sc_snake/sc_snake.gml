@@ -9,6 +9,12 @@ function sc_updateSnake()
     dir_x = next_dir_x;
     dir_y = next_dir_y;
 
+    // Если змейка начала движение, отключаем отображение звезд
+    if (dir_x != 0 || dir_y != 0)
+    {
+        show_stars = false;
+    }
+
     if (dir_x == 0 && dir_y == 0)
     {
         exit;
@@ -39,6 +45,11 @@ function sc_updateSnake()
         
         global.var_input_lag += global.var_input_lag_increment;
         move_delay += global.var_speed_increment_2;
+        
+        // Активируем анимацию звезд при столкновении
+        show_stars = true;
+        stars_index = 0;
+        
         exit;
     }
 
@@ -54,6 +65,11 @@ function sc_updateSnake()
         input_queue = [];
         
         global.var_input_lag += global.var_input_lag_increment;
+        
+        // Активируем анимацию звезд при столкновении
+        show_stars = true;
+        stars_index = 0;
+        
         exit;
     }
 
