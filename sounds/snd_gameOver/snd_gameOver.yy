@@ -22,9 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_gameOver.wav",
-<<<<<<< Updated upstream
   "volume":0.43,
-=======
-  "volume":0.57,
->>>>>>> Stashed changes
 }
