@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_eatFreshD.wav",
-  "volume":0.18,
+  "volume":0.3,
 }
