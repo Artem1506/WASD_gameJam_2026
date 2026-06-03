@@ -23,14 +23,6 @@ else
 
 // Если произошло столкновение, рисуем зацикленную анимацию звезд
 if (show_stars)
-{
-    var stars_width = sprite_get_width(spr_transparentStars);
-    var stars_height = sprite_get_height(spr_transparentStars);
-    
-    draw_sprite(
-        spr_transparentStars, 
-        stars_index, 
-        x - stars_width / 2, 
-        y - stars_height / 2
-    );
+{ 
+    draw_sprite(spr_transparentStars, stars_index, x, y);
 }

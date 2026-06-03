@@ -77,6 +77,7 @@
     {"id":{"name":"spr_bgStart","path":"sprites/spr_bgStart/spr_bgStart.yy",},},
     {"id":{"name":"spr_grapeFresh","path":"sprites/spr_grapeFresh/spr_grapeFresh.yy",},},
     {"id":{"name":"spr_grapeRotten","path":"sprites/spr_grapeRotten/spr_grapeRotten.yy",},},
+    {"id":{"name":"spr_name","path":"sprites/spr_name/spr_name.yy",},},
     {"id":{"name":"spr_pill","path":"sprites/spr_pill/spr_pill.yy",},},
     {"id":{"name":"spr_snakeHead","path":"sprites/spr_snakeHead/spr_snakeHead.yy",},},
     {"id":{"name":"spr_snakeHeadEat","path":"sprites/spr_snakeHeadEat/spr_snakeHeadEat.yy",},},

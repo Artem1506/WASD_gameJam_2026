@@ -12,4 +12,4 @@ part_system_position(pill_particles, x, y);
 audio_play_sound(snd_medsSpawn, 1, false);
 
 life_timer = 0;
-life_time = 10; // Исчезает через 10 секунд
+life_time = 9; // Исчезает через 10 секунд

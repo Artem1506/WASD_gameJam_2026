@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":21.333334,
+  "duration":32.0,
   "exportDir":"",
   "name":"snd_startRoomMusic",
   "parent":{
@@ -22,5 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"snd_startRoomMusic.wav",
-  "volume":0.88,
+  "volume":0.58,
 }
