@@ -8,7 +8,7 @@ if (show_info == true) {
 	scroll_y -= mouse_wheel_up() * scroll_speed;
 
 	// ограничение прокрутки
-	scroll_y = clamp(scroll_y, 0, 500);
+	scroll_y = clamp(scroll_y, 0, 1200);
 }
 
 if (show_info == true && keyboard_check_pressed(vk_escape)){
