@@ -11,7 +11,6 @@
   "defaultScriptType":0,
   "Folders":[
     {"$GMFolder":"","%Name":"fonts","folderPath":"folders/fonts.yy","name":"fonts","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"UI","folderPath":"folders/UI.yy","name":"UI","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"objects","folderPath":"folders/objects.yy","name":"objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"particles","folderPath":"folders/particles.yy","name":"particles","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"rooms","folderPath":"folders/rooms.yy","name":"rooms","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -19,6 +18,7 @@
     {"$GMFolder":"","%Name":"shaders","folderPath":"folders/shaders.yy","name":"shaders","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"sounds","folderPath":"folders/sounds.yy","name":"sounds","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"spritees","folderPath":"folders/spritees.yy","name":"spritees","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"UI","folderPath":"folders/UI.yy","name":"UI","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[],
@@ -79,6 +79,7 @@
     {"id":{"name":"spr_grapeRotten","path":"sprites/spr_grapeRotten/spr_grapeRotten.yy",},},
     {"id":{"name":"spr_pill","path":"sprites/spr_pill/spr_pill.yy",},},
     {"id":{"name":"spr_snakeHead","path":"sprites/spr_snakeHead/spr_snakeHead.yy",},},
+    {"id":{"name":"spr_snakeHeadEat","path":"sprites/spr_snakeHeadEat/spr_snakeHeadEat.yy",},},
     {"id":{"name":"spr_snakeSegment","path":"sprites/spr_snakeSegment/spr_snakeSegment.yy",},},
     {"id":{"name":"spr_transparentStars","path":"sprites/spr_transparentStars/spr_transparentStars.yy",},},
     {"id":{"name":"ui_buttonAgain_hovered","path":"sprites/ui_buttonAgain_hovered/ui_buttonAgain_hovered.yy",},},

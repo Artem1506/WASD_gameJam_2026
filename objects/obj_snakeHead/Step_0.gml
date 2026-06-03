@@ -25,6 +25,18 @@ if (is_rotating)
     }
 }
 
+// Обновление индекса кадра анимации поедания
+if (is_eating)
+{
+    eat_index += 10 * (delta_time / 1000000);
+    var _eat_frames = sprite_get_number(spr_snakeHeadEat);
+    if (eat_index >= _eat_frames)
+    {
+        is_eating = false;
+        eat_index = 0;
+    }
+}
+
 // Обновление индекса кадра анимации звезд при столкновении
 if (show_stars)
 {

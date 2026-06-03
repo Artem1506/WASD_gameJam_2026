@@ -57,3 +57,7 @@ rotation_timer = 0;
 // Переменные для анимации звезд при столкновении
 show_stars = false;
 stars_index = 0;
+
+// Переменные для анимации поедания
+is_eating = false;
+eat_index = 0;

@@ -84,6 +84,10 @@ function sc_eatFreshGrape()
         )
         {
             global.var_score += 1;
+            
+            // Запуск анимации поедания на голове змейки
+            other.is_eating = true;
+            other.eat_index = 0;
 
             // Воспроизводим звук съедания свежего винограда через аудио-менеджер
             with (obj_audioManger)
@@ -130,6 +134,10 @@ function sc_eatRottenGrape()
         )
         {
             global.var_input_lag += global.var_input_lag_increment;
+            
+            // Запуск анимации поедания на голове змейки
+            other.is_eating = true;
+            other.eat_index = 0;
 
             other.move_delay += global.var_speed_increment_2;
 
@@ -156,6 +164,10 @@ function sc_eatPill()
         )
         {
             global.var_input_lag = max(0, global.var_input_lag - (global.var_input_lag_increment * 3));
+            
+            // Запуск анимации поедания на голове змейки
+            other.is_eating = true;
+            other.eat_index = 0;
 
             // Воспроизводим звук съедания таблетки/пилюли через аудио-менеджер
             with (obj_audioManger)
