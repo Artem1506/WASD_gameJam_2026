@@ -154,30 +154,25 @@ if (show_info == true) {
     "- Артем Ваулин - продюсер,");
 
     draw_text(base_x, base_y + spacing * 40,
-    "геймдизайнер, программист,");
+    "геймдизайнер, программист");
 
-    draw_text(base_x, base_y + spacing * 41,
-    "UI/UX-дизайнер, VFX");
-
-
-    draw_text(base_x, base_y + spacing * 43,
+    draw_text(base_x, base_y + spacing * 42,
     "- Василий Казаков - композитор,");
 
-    draw_text(base_x, base_y + spacing * 44,
+    draw_text(base_x, base_y + spacing * 43,
     "саунд-дизайнер");
 
-
-    draw_text(base_x, base_y + spacing * 46,
-    "- Павел - художник, аниматор");
+    draw_text(base_x, base_y + spacing * 45,
+    "- Павел Artmoogl - художник, аниматор");
 
     // ---------------- ПЛЕЙТЕСТЫ ----------------
 
     draw_text(base_x + padding,
-    base_y + spacing * 48,
+    base_y + spacing * 47,
     "ПЛЕЙТЕСТЫ:");
 
-    draw_text(base_x, base_y + spacing * 49,
+    draw_text(base_x, base_y + spacing * 48,
     "- RodjerX");
-    draw_text(base_x + padding, base_y + spacing * 50,
+    draw_text(base_x + padding, base_y + spacing * 49,
     "https://t.me/myArduinoProj");
 }
