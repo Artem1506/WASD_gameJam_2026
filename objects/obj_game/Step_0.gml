@@ -37,3 +37,17 @@ if (game_over_timer > 0)
         room_goto(rm_result);
     }
 }
+
+// Обновление анимации стартового светофора
+if (show_traffic_light)
+{
+    // Скорость анимации: 1.1 кадра в секунду (из настроек spr_trafficLight.yy)
+    traffic_light_index += 1.1 * (delta_time / 1000000);
+    
+    // Если анимация закончилась (воспроизведены все 4 кадра), удаляем светофор
+    var _frames = sprite_get_number(spr_trafficLight);
+    if (traffic_light_index >= _frames)
+    {
+        show_traffic_light = false;
+    }
+}

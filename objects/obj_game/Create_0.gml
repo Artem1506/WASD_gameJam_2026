@@ -17,7 +17,7 @@ global.var_input_lag_threshold = 1.5;
 global.var_speed_increment = 0.005;  //увеличение скорости при хорошем фрукте
 global.var_speed_increment_2 = 0.01; //уменьшение скорости при столкновении
 
-global.var_life_time = 6.5;
+global.var_life_time = 6;
 global.var_life_time_min = 1.0;
 global.var_life_time_decrement = 0.15;
 global.var_score_speed_threshold = 5; // Порог очков для ускорения порчи ягод
@@ -44,3 +44,7 @@ surf_game = -1;
 
 // Таймер окончания игры (-1 означает, что игра продолжается)
 game_over_timer = -1;
+
+// Параметры анимации стартового светофора
+show_traffic_light = true;
+traffic_light_index = 0;

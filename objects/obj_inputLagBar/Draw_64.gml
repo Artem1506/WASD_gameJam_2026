@@ -3,8 +3,8 @@
 
 draw_self();
 
-var max_width = 196;
-var bar_height = 18;
+var max_width = 274;
+var bar_height = 45;
 
 // нормализуем lag
 var t = global.var_input_lag / global.var_input_lag_threshold;
@@ -28,8 +28,8 @@ var col = make_color_rgb(r, g, b);
 draw_set_color(col);
 
 // Вычисляем координаты отрисовки относительно точки ориджин самого объекта
-var draw_x = x + 64;
-var draw_y = y + 40;
+var draw_x = x + 104;
+var draw_y = y + 30;
 
 // рисуем прямоугольник
 draw_rectangle(
@@ -42,3 +42,26 @@ draw_rectangle(
 
 // возвращаем цвет на исходное значение
 draw_set_color(old_color);
+
+show_debug_message(string(global.var_input_lag))
+// Определение спрайта головы на основе заполнения шкалы лага
+head_sprite = -1;
+
+if (global.var_input_lag >= 0 && global.var_input_lag <= 0.4)
+{
+    head_sprite = spr_head_01;
+}
+else if (global.var_input_lag >= 0.5 && global.var_input_lag <= 0.9)
+{
+    head_sprite = spr_head_02;
+}
+else if (global.var_input_lag >= 1)
+{
+    head_sprite = spr_head_03;
+}
+
+// Рисуем спрайт в координатах объекта, если он существует в проекте
+if (head_sprite != -1)
+{
+    draw_sprite(head_sprite, 0, x+10, y);
+}

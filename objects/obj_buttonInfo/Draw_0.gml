@@ -27,7 +27,7 @@ if (show_info == true) {
     "Разработано командой \"GrampsGamer\"");
 
     draw_text(base_x, base_y + spacing * 2,
-    "для GameJam.Moscow 2026");
+    "для геймджем.москва 2026");
 
 
 
@@ -137,10 +137,10 @@ if (show_info == true) {
     "также увеличивают уровень");
 
     draw_text(base_x, base_y + spacing * 35,
-    "опьянения и временно замедляют");
+    "опьянения и замедляют движение");
 
     draw_text(base_x, base_y + spacing * 36,
-    "движение змейки.");
+    "змейки.");
 
 
 
@@ -164,7 +164,7 @@ if (show_info == true) {
     "- Василий Казаков - композитор,");
 
     draw_text(base_x, base_y + spacing * 44,
-    "саунд-дизайнер, SFX");
+    "саунд-дизайнер");
 
 
     draw_text(base_x, base_y + spacing * 46,
@@ -177,7 +177,7 @@ if (show_info == true) {
     "ПЛЕЙТЕСТЫ:");
 
     draw_text(base_x, base_y + spacing * 49,
-    "- Ахмедзянов Алексей, RodjerX");
+    "- RodjerX");
     draw_text(base_x + padding, base_y + spacing * 50,
-    "TELEGRAM: https://t.me/myArduinoProj");
+    "https://t.me/myArduinoProj");
 }
