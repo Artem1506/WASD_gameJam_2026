@@ -31,8 +31,6 @@ global.var_move_delay_min = 0.03;
 global.arena_width_cells = 37;
 global.arena_height_cells = 18;
 
-// Таймер спавна восстановительной таблетки
-pill_spawn_timer = irandom_range(30, 60);
 
 instance_create_layer(0, 0, "Instances", obj_grapeFresh);
 
@@ -48,3 +46,6 @@ game_over_timer = -1;
 // Параметры анимации стартового светофора
 show_traffic_light = true;
 traffic_light_index = 0;
+
+// Запуск циклического таймера спавна таблетки
+alarm[0] = 60;

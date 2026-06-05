@@ -43,7 +43,6 @@ draw_rectangle(
 // возвращаем цвет на исходное значение
 draw_set_color(old_color);
 
-show_debug_message(string(global.var_input_lag))
 // Определение спрайта головы на основе заполнения шкалы лага
 head_sprite = -1;
 
