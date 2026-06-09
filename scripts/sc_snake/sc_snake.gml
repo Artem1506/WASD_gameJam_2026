@@ -44,7 +44,8 @@ function sc_updateSnake()
         input_queue = [];
         
         sc_changeInputLag(global.var_input_lag_increment);
-        move_delay += global.var_speed_increment_2;
+        speed_penalties += global.var_speed_increment_2;
+        sc_recalculateSnakeSpeed(id);
         
         // Сбрасываем комбо при столкновении со стеной
         global.var_combo = 0;

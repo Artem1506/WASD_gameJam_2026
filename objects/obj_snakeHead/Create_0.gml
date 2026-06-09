@@ -3,6 +3,7 @@
 
 move_timer = 0;
 
+speed_penalties = 0;
 move_delay = global.var_snake_initial_speed;
 
 // Таймер задержки старта (3 секунды перед началом движения змейки)

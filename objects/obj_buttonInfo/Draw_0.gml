@@ -175,4 +175,7 @@ if (show_info == true) {
     "- RodjerX");
     draw_text(base_x + padding, base_y + spacing * 49,
     "https://t.me/myArduinoProj");
+	
+	draw_text(base_x, base_y + spacing * 51,
+	"v. " + GM_version)
 }

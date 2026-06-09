@@ -110,10 +110,7 @@ function sc_eatFreshGrape()
                 play_eat_fresh();
             }
 
-            other.move_delay = max(
-                global.var_move_delay_min,
-                other.move_delay - global.var_speed_increment
-            );
+            sc_recalculateSnakeSpeed(other);
 
             if (global.var_score % global.var_score_speed_threshold == 0)
             {
@@ -158,7 +155,8 @@ function sc_eatRottenGrape()
             other.is_eating = true;
             other.eat_index = 0;
 
-            other.move_delay += global.var_speed_increment_2;
+            other.speed_penalties += global.var_speed_increment_2;
+            sc_recalculateSnakeSpeed(other);
 
             // Воспроизводим звук съедания испорченного винограда через аудио-менеджер
             with (obj_audioManger)
@@ -232,4 +230,16 @@ function sc_activateConcentration()
     
     // На время концентрации лаг ввода равен 0
     global.var_input_lag = 0;
+}
+
+/// @description Вычисление скорости змейки по экспоненциальной формуле с учетом штрафов
+function sc_recalculateSnakeSpeed(head)
+{
+    with (head)
+    {
+        move_delay = max(
+            global.var_move_delay_min,
+            global.var_move_delay_min + (global.var_snake_initial_speed - global.var_move_delay_min) * exp(global.var_speed_increment * global.var_score) + speed_penalties
+        );
+    }
 }
