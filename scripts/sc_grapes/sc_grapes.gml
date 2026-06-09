@@ -85,6 +85,21 @@ function sc_eatFreshGrape()
         {
             global.var_score += 1;
             
+            // Увеличиваем комбо (не больше 10)
+            global.var_combo = min(10, global.var_combo + 1);
+            
+            // Активация эффектов при наборе комбо
+            if (global.var_combo == 5)
+            {
+                sc_activateConcentration();
+            }
+            else if (global.var_combo == 10)
+            {
+                global.var_input_lag = 0;
+                global.var_concentration_stored_lag = 0;
+                global.var_concentration_accumulated_lag = 0;
+            }
+            
             // Запуск анимации поедания на голове змейки
             other.is_eating = true;
             other.eat_index = 0;
@@ -133,7 +148,11 @@ function sc_eatRottenGrape()
             && other.grid_y == grid_y
         )
         {
-            global.var_input_lag += global.var_input_lag_increment;
+            // Изменение лага через хелпер во время/вне концентрации
+            sc_changeInputLag(global.var_input_lag_increment);
+            
+            // Сбрасываем комбо при поедании испорченного винограда
+            global.var_combo = 0;
             
             // Запуск анимации поедания на голове змейки
             other.is_eating = true;
@@ -163,7 +182,8 @@ function sc_eatPill()
             && other.grid_y == grid_y
         )
         {
-            global.var_input_lag = max(0, global.var_input_lag - (global.var_input_lag_increment * 3));
+            // Уменьшение лага через хелпер
+            sc_changeInputLag(-(global.var_input_lag_increment * 3));
             
             // Запуск анимации поедания на голове змейки
             other.is_eating = true;
@@ -180,4 +200,36 @@ function sc_eatPill()
             break;
         }
     }
+}
+
+/// @description Вспомогательные функции для изменения инпут-лага и эффекта концентрации
+function sc_changeInputLag(amount)
+{
+    if (global.var_concentration_active)
+    {
+        global.var_concentration_accumulated_lag += amount;
+    }
+    else
+    {
+        global.var_input_lag = max(0, global.var_input_lag + amount);
+    }
+}
+
+function sc_activateConcentration()
+{
+    // Если эффект уже активен, просто обновляем таймер
+    if (global.var_concentration_active)
+    {
+        global.var_concentration_timer = global.var_concentration_time;
+        return;
+    }
+    
+    // Активация эффекта
+    global.var_concentration_active = true;
+    global.var_concentration_timer = global.var_concentration_time;
+    global.var_concentration_stored_lag = global.var_input_lag;
+    global.var_concentration_accumulated_lag = 0;
+    
+    // На время концентрации лаг ввода равен 0
+    global.var_input_lag = 0;
 }

@@ -10,6 +10,15 @@ global.arena_bottom = 720 - 80;
 
 global.var_score = 0;
 
+global.var_combo = 0;
+
+// Переменные для эффекта концентрации
+global.var_concentration_time = 5.0; // Длительность концентрации в секундах
+global.var_concentration_active = false;
+global.var_concentration_timer = 0;
+global.var_concentration_stored_lag = 0;
+global.var_concentration_accumulated_lag = 0;
+
 global.var_input_lag = 0;
 global.var_input_lag_increment = 0.1;
 global.var_input_lag_threshold = 1.5;

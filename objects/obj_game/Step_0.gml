@@ -37,3 +37,17 @@ if (show_traffic_light)
         show_traffic_light = false;
     }
 }
+
+// Обновление таймера концентрации
+if (global.var_concentration_active)
+{
+    global.var_concentration_timer -= delta_time / 1000000;
+    if (global.var_concentration_timer <= 0)
+    {
+        global.var_concentration_active = false;
+        global.var_concentration_timer = 0;
+        
+        // Возвращаем сохраненный инпут-лаг + изменения за время концентрации
+        global.var_input_lag = max(0, global.var_concentration_stored_lag + global.var_concentration_accumulated_lag);
+    }
+}

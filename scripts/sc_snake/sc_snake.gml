@@ -43,8 +43,11 @@ function sc_updateSnake()
         next_dir_y = 0;
         input_queue = [];
         
-        global.var_input_lag += global.var_input_lag_increment;
+        sc_changeInputLag(global.var_input_lag_increment);
         move_delay += global.var_speed_increment_2;
+        
+        // Сбрасываем комбо при столкновении со стеной
+        global.var_combo = 0;
         
         // Активируем анимацию звезд при столкновении
         show_stars = true;
@@ -64,7 +67,10 @@ function sc_updateSnake()
         next_dir_y = 0;
         input_queue = [];
         
-        global.var_input_lag += global.var_input_lag_increment;
+        sc_changeInputLag(global.var_input_lag_increment);
+        
+        // Сбрасываем комбо при столкновении с хвостом
+        global.var_combo = 0;
         
         // Активируем анимацию звезд при столкновении
         show_stars = true;
