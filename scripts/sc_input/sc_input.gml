@@ -3,41 +3,10 @@ function sc_handleInput()
     sc_addInputCommand();
 }
 
-function sc_addInputCommand()
+function sc_pushCommand(dx, dy)
 {
-    var input_x = 0;
-    var input_y = 0;
-
-    var pressed = false;
-
-    if (keyboard_check_pressed(ord("W")))
-    {
-        input_y = -1;
-        pressed = true;
-    }
-
-    if (keyboard_check_pressed(ord("S")))
-    {
-        input_y = 1;
-        pressed = true;
-    }
-
-    if (keyboard_check_pressed(ord("A")))
-    {
-        input_x = -1;
-        pressed = true;
-    }
-
-    if (keyboard_check_pressed(ord("D")))
-    {
-        input_x = 1;
-        pressed = true;
-    }
-
-    if (!pressed)
-    {
-        exit;
-    }
+    // Направление не должно быть нулевым
+    if (dx == 0 && dy == 0) exit;
 
     // Вычисляем последнее запланированное направление змейки в очереди (или текущее, если очередь пуста)
     var last_dir_x = dir_x;
@@ -51,24 +20,34 @@ function sc_addInputCommand()
     }
 
     // Запрет разворота на 180 градусов относительно последнего запланированного вектора движения
-    if (
-        input_x == -last_dir_x
-        && input_y == -last_dir_y
-    )
+    if (dx == -last_dir_x && dy == -last_dir_y)
     {
         exit;
     }
 
     var command =
     {
-        dir_x : input_x,
-        dir_y : input_y,
-
-        execute_time :
-            current_time + (global.var_input_lag * 1000)
+        dir_x : dx,
+        dir_y : dy,
+        execute_time : current_time + (global.var_input_lag * 1000)
     };
 
     array_push(input_queue, command);
+}
+
+function sc_addInputCommand()
+{
+    // Опрашиваем нажатия клавиш независимо для исключения диагонального движения
+    var pressed_w = keyboard_check_pressed(ord("W"));
+    var pressed_s = keyboard_check_pressed(ord("S"));
+    var pressed_a = keyboard_check_pressed(ord("A"));
+    var pressed_d = keyboard_check_pressed(ord("D"));
+
+    // Добавляем команды по отдельности. Если нажаты две клавиши одновременно, они запишутся как последовательность шагов.
+    if (pressed_w) sc_pushCommand(0, -1);
+    if (pressed_s) sc_pushCommand(0, 1);
+    if (pressed_a) sc_pushCommand(-1, 0);
+    if (pressed_d) sc_pushCommand(1, 0);
 }
 
 function sc_processInputQueue()

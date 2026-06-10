@@ -35,3 +35,7 @@ if (is_entering_name)
     
     draw_text(x + 380, y, "ВВЕДИТЕ ИМЯ: " + formatted_name);
 }
+
+// Сбрасываем выравнивание на значения по умолчанию для предотвращения багов в других объектах
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);

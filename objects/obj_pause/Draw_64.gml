@@ -1,8 +1,7 @@
-/// @description INFO SCREEN
+/// @description Insert description here
+// You can write your code in this editor
 
-draw_self();
-
-if (show_info == true) {
+if (is_paused) {
 
     var base_x = 750;
     var base_y = 50 - scroll_y;

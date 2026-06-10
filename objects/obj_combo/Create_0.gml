@@ -21,3 +21,6 @@ combo_fade_timer = 0; // Время плавного затухания (до 1.
 concentration_anim_index = 0;
 reset_lag_anim_index = 0;
 reset_lag_active_timer = 0;
+
+// Устанавливаем меньшую глубину (ближе к экрану), чтобы объект рисовался поверх других элементов HUD (например, obj_inputLagBar, у которого глубина по умолчанию равна глубине слоя HUD = 100)
+depth = 90;

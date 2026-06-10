@@ -1,5 +1,8 @@
 /// @description Контроль проигрывания фоновой музыки при смене комнат
 
+// Если игра поставлена на паузу, ничего не делаем
+if (instance_exists(obj_pause) && obj_pause.is_paused) exit;
+
 // 1. Определение смены комнаты
 if (room != current_playing_room)
 {

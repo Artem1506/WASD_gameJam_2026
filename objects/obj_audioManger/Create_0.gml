@@ -47,3 +47,34 @@ play_eat_pill = function()
     // Воспроизводим звук snd_eatMedsB с приоритетом 1, без зацикливания
     audio_play_sound(snd_eatMedsB, 1, false);
 }
+
+pause_sound_id = -1;
+
+/**
+ * Ставит на паузу все проигрываемые звуки
+ */
+pause_audio = function()
+{
+    audio_pause_all();
+    
+    // Закомментированный код для воспроизведения snd_pause
+    // if (audio_exists(snd_pause))
+    // {
+    //     pause_sound_id = audio_play_sound(snd_pause, 10, true);
+    // }
+}
+
+/**
+ * Возобновляет проигрывание всех звуков
+ */
+resume_audio = function()
+{
+    // Закомментированный код для остановки snd_pause
+    // if (pause_sound_id != -1)
+    // {
+    //     audio_stop_sound(pause_sound_id);
+    //     pause_sound_id = -1;
+    // }
+    
+    audio_resume_all();
+}
