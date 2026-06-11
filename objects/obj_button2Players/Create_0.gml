@@ -8,6 +8,6 @@ hovered_style = ui_buttonStartGame_hovered;
 pressed_style = ui_buttonStartGame_pressed;
 
 callback_function = function() {
-	global.var_is_multiplayer = false;
-	room_goto(rm_main);
+	global.var_is_multiplayer = true;
+	room_goto(rm_2Players);
 }

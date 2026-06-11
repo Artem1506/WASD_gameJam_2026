@@ -32,6 +32,68 @@ function sc_updateSnake()
     var next_grid_x = grid_x + dir_x;
     var next_grid_y = grid_y + dir_y;
 
+    // Проверяем лобовое столкновение с другой змейкой
+    var other_head = noone;
+    if (object_index == obj_snakeHead)
+    {
+        other_head = instance_find(obj_snakeHead_2, 0);
+    }
+    else
+    {
+        other_head = instance_find(obj_snakeHead, 0);
+    }
+
+    if (other_head != noone)
+    {
+        var other_next_x = other_head.grid_x + other_head.dir_x;
+        var other_next_y = other_head.grid_y + other_head.dir_y;
+        
+        if ((next_grid_x == other_head.grid_x && next_grid_y == other_head.grid_y) ||
+            (next_grid_x == other_next_x && next_grid_y == other_next_y))
+        {
+            audio_play_sound(snd_collision, 1, false);
+            
+            // Накладываем штрафы и останавливаем текущую змейку
+            dir_x = 0;
+            dir_y = 0;
+            next_dir_x = 0;
+            next_dir_y = 0;
+            input_queue = [];
+            
+            sc_changeInputLag(global.var_input_lag_increment);
+            speed_penalties += global.var_speed_increment_2;
+            sc_recalculateSnakeSpeed(id);
+            
+            if (object_index == obj_snakeHead) global.var_combo = 0;
+            else global.var_combo_p2 = 0;
+            
+            show_stars = true;
+            stars_index = 0;
+            
+            // Накладываем штрафы и останавливаем вторую змейку
+            with (other_head)
+            {
+                dir_x = 0;
+                dir_y = 0;
+                next_dir_x = 0;
+                next_dir_y = 0;
+                input_queue = [];
+                
+                sc_changeInputLag(global.var_input_lag_increment);
+                speed_penalties += global.var_speed_increment_2;
+                sc_recalculateSnakeSpeed(id);
+                
+                if (object_index == obj_snakeHead) global.var_combo = 0;
+                else global.var_combo_p2 = 0;
+                
+                show_stars = true;
+                stars_index = 0;
+            }
+            
+            exit;
+        }
+    }
+
     // Проверяем столкновение со стеной
     if (sc_checkWallCollision(next_grid_x, next_grid_y))
     {
@@ -48,7 +110,14 @@ function sc_updateSnake()
         sc_recalculateSnakeSpeed(id);
         
         // Сбрасываем комбо при столкновении со стеной
-        global.var_combo = 0;
+        if (object_index == obj_snakeHead)
+        {
+            global.var_combo = 0;
+        }
+        else
+        {
+            global.var_combo_p2 = 0;
+        }
         
         // Активируем анимацию звезд при столкновении
         show_stars = true;
@@ -71,7 +140,14 @@ function sc_updateSnake()
         sc_changeInputLag(global.var_input_lag_increment);
         
         // Сбрасываем комбо при столкновении с хвостом
-        global.var_combo = 0;
+        if (object_index == obj_snakeHead)
+        {
+            global.var_combo = 0;
+        }
+        else
+        {
+            global.var_combo_p2 = 0;
+        }
         
         // Активируем анимацию звезд при столкновении
         show_stars = true;
@@ -149,17 +225,14 @@ function sc_checkWallCollision(next_x, next_y)
 
 function sc_checkTailCollision(next_x, next_y)
 {
-    for (var i = 0; i < array_length(segments); i++)
+    var collision_found = false;
+    with (obj_snakeSegment)
     {
-        var seg = segments[i];
-
-        if (
-            seg.grid_x == next_x
-            && seg.grid_y == next_y
-        )
+        if (grid_x == next_x && grid_y == next_y)
         {
-            return true;
+            collision_found = true;
+            break;
         }
     }
-    return false;
+    return collision_found;
 }

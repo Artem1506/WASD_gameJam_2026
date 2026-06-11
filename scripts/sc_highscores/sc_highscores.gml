@@ -5,12 +5,13 @@
 function sc_loadHighscores()
 {
     var list = [];
+    var section = (variable_global_exists("var_is_multiplayer") && global.var_is_multiplayer) ? "HighscoresMulti" : "HighscoresSingle";
     ini_open("records.ini");
     for (var i = 0; i < 5; i++)
     {
         var key_num = string(i + 1);
-        var r_name = ini_read_string("Highscores", "Name" + key_num, "---");
-        var r_score = ini_read_real("Highscores", "Score" + key_num, 0);
+        var r_name = ini_read_string(section, "Name" + key_num, "---");
+        var r_score = ini_read_real(section, "Score" + key_num, 0);
         array_push(list, { name: r_name, score: r_score });
     }
     ini_close();
@@ -45,12 +46,13 @@ function sc_checkHighscoreEligible(_score)
  */
 function sc_saveHighscores(list)
 {
+    var section = (variable_global_exists("var_is_multiplayer") && global.var_is_multiplayer) ? "HighscoresMulti" : "HighscoresSingle";
     ini_open("records.ini");
     for (var i = 0; i < 5; i++)
     {
         var key_num = string(i + 1);
-        ini_write_string("Highscores", "Name" + key_num, list[i].name);
-        ini_write_real("Highscores", "Score" + key_num, list[i].score);
+        ini_write_string(section, "Name" + key_num, list[i].name);
+        ini_write_real(section, "Score" + key_num, list[i].score);
     }
     ini_close();
 }

@@ -66,7 +66,7 @@ if (room != current_playing_room)
 }
 
 // 2. Воспроизведение музыки в зависимости от текущей комнаты
-if (room == rm_main)
+if (room == rm_main || room == rm_2Players)
 {
     // Если музыкальное интро еще не было запущено
     if (!intro_started)

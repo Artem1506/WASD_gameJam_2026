@@ -1,14 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"obj_pill",
+  "%Name":"obj_snakeHead_2",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":12,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_pill",
+  "name":"obj_snakeHead_2",
   "overriddenProperties":[],
   "parent":{
     "name":"objects",
@@ -33,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_pill",
-    "path":"sprites/spr_pill/spr_pill.yy",
+    "name":"spr_snakeHead_2",
+    "path":"sprites/spr_snakeHead_2/spr_snakeHead_2.yy",
   },
   "spriteMaskId":null,
   "visible":true,

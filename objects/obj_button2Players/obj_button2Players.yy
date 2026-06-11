@@ -1,20 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"obj_pill",
+  "%Name":"obj_button2Players",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":1,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":12,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_pill",
+  "name":"obj_button2Players",
   "overriddenProperties":[],
   "parent":{
     "name":"objects",
     "path":"folders/objects.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_buttonParent",
+    "path":"objects/obj_buttonParent/obj_buttonParent.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_pill",
-    "path":"sprites/spr_pill/spr_pill.yy",
+    "name":"ui_buttonStartGame_normal",
+    "path":"sprites/ui_buttonStartGame_normal/ui_buttonStartGame_normal.yy",
   },
   "spriteMaskId":null,
   "visible":true,

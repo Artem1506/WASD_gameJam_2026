@@ -85,21 +85,39 @@ function sc_eatFreshGrape()
         {
             global.var_score += 1;
             
-            // Увеличиваем комбо (не больше 10)
-            global.var_combo = min(10, global.var_combo + 1);
-            
-            // Активация эффектов при наборе комбо
-            if (global.var_combo == 5)
+            if (other.object_index == obj_snakeHead)
             {
-                sc_activateConcentration();
-				audio_play_sound(snd_comboFive, 1, false);
+                // Увеличиваем комбо (не больше 10) для P1
+                global.var_combo = min(10, global.var_combo + 1);
+                
+                // Активация эффектов при наборе комбо
+                if (global.var_combo == 5)
+                {
+                    with (other) { sc_activateConcentration(); }
+                }
+                else if (global.var_combo == 10)
+                {
+                    global.var_input_lag = 0;
+                    global.var_concentration_stored_lag = 0;
+                    global.var_concentration_accumulated_lag = 0;
+                }
             }
-            else if (global.var_combo == 10)
+            else // obj_snakeHead_2
             {
-                global.var_input_lag = 0;
-                global.var_concentration_stored_lag = 0;
-                global.var_concentration_accumulated_lag = 0;
-				audio_play_sound(snd_comboTen, 1, false);
+                // Увеличиваем комбо (не больше 10) для P2
+                global.var_combo_p2 = min(10, global.var_combo_p2 + 1);
+                
+                // Активация эффектов при наборе комбо
+                if (global.var_combo_p2 == 5)
+                {
+                    with (other) { sc_activateConcentration(); }
+                }
+                else if (global.var_combo_p2 == 10)
+                {
+                    global.var_input_lag_p2 = 0;
+                    global.var_concentration_stored_lag_p2 = 0;
+                    global.var_concentration_accumulated_lag_p2 = 0;
+                }
             }
             
             // Запуск анимации поедания на голове змейки
@@ -148,10 +166,17 @@ function sc_eatRottenGrape()
         )
         {
             // Изменение лага через хелпер во время/вне концентрации
-            sc_changeInputLag(global.var_input_lag_increment);
+            with (other) { sc_changeInputLag(global.var_input_lag_increment); }
             
             // Сбрасываем комбо при поедании испорченного винограда
-            global.var_combo = 0;
+            if (other.object_index == obj_snakeHead)
+            {
+                global.var_combo = 0;
+            }
+            else
+            {
+                global.var_combo_p2 = 0;
+            }
             
             // Запуск анимации поедания на голове змейки
             other.is_eating = true;
@@ -183,7 +208,7 @@ function sc_eatPill()
         )
         {
             // Уменьшение лага через хелпер
-            sc_changeInputLag(-(global.var_input_lag_increment * 3));
+            with (other) { sc_changeInputLag(-(global.var_input_lag_increment * 3)); }
             
             // Запуск анимации поедания на голове змейки
             other.is_eating = true;
@@ -205,33 +230,68 @@ function sc_eatPill()
 /// @description Вспомогательные функции для изменения инпут-лага и эффекта концентрации
 function sc_changeInputLag(amount)
 {
-    if (global.var_concentration_active)
+    if (object_index == obj_snakeHead)
     {
-        global.var_concentration_accumulated_lag += amount;
+        if (global.var_concentration_active)
+        {
+            global.var_concentration_accumulated_lag += amount;
+        }
+        else
+        {
+            global.var_input_lag = max(0, global.var_input_lag + amount);
+        }
     }
-    else
+    else // obj_snakeHead_2
     {
-        global.var_input_lag = max(0, global.var_input_lag + amount);
+        if (global.var_concentration_active_p2)
+        {
+            global.var_concentration_accumulated_lag_p2 += amount;
+        }
+        else
+        {
+            global.var_input_lag_p2 = max(0, global.var_input_lag_p2 + amount);
+        }
     }
 }
 
 function sc_activateConcentration()
 {
-    // Если эффект уже активен, просто обновляем таймер
-    if (global.var_concentration_active)
+    if (object_index == obj_snakeHead)
     {
-        global.var_concentration_timer = global.var_concentration_time;
-        return;
+        // Если эффект уже активен, просто обновляем таймер
+        if (global.var_concentration_active)
+        {
+            global.var_concentration_timer = global.var_concentration_time;
+        }
+        else
+        {
+            global.var_concentration_active = true;
+            global.var_concentration_timer = global.var_concentration_time;
+            global.var_concentration_stored_lag = global.var_input_lag;
+            global.var_concentration_accumulated_lag = 0;
+            
+            // На время концентрации лаг ввода равен 0
+            global.var_input_lag = 0;
+        }
     }
-    
-    // Активация эффекта
-    global.var_concentration_active = true;
-    global.var_concentration_timer = global.var_concentration_time;
-    global.var_concentration_stored_lag = global.var_input_lag;
-    global.var_concentration_accumulated_lag = 0;
-    
-    // На время концентрации лаг ввода равен 0
-    global.var_input_lag = 0;
+    else // obj_snakeHead_2
+    {
+        // Если эффект уже активен, просто обновляем таймер
+        if (global.var_concentration_active_p2)
+        {
+            global.var_concentration_timer_p2 = global.var_concentration_time;
+        }
+        else
+        {
+            global.var_concentration_active_p2 = true;
+            global.var_concentration_timer_p2 = global.var_concentration_time;
+            global.var_concentration_stored_lag_p2 = global.var_input_lag_p2;
+            global.var_concentration_accumulated_lag_p2 = 0;
+            
+            // На время концентрации лаг ввода равен 0
+            global.var_input_lag_p2 = 0;
+        }
+    }
 }
 
 /// @description Вычисление скорости змейки по экспоненциальной формуле с учетом штрафов
