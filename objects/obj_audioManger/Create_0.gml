@@ -48,6 +48,22 @@ play_eat_pill = function()
     audio_play_sound(snd_eatMedsB, 1, false);
 }
 
+/**
+ * Воспроизводит звук достижения 5 комбо (snd_comboFive)
+ */
+play_combo_five = function()
+{
+    audio_play_sound(snd_comboFive, 10, false);
+}
+
+/**
+ * Воспроизводит звук достижения 10 комбо (snd_comboTen)
+ */
+play_combo_ten = function()
+{
+    audio_play_sound(snd_comboTen, 10, false);
+}
+
 pause_sound_id = -1;
 
 /**

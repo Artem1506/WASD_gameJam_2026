@@ -94,12 +94,14 @@ function sc_eatFreshGrape()
                 if (global.var_combo == 5)
                 {
                     with (other) { sc_activateConcentration(); }
+                    with (obj_audioManger) { play_combo_five(); }
                 }
                 else if (global.var_combo == 10)
                 {
                     global.var_input_lag = 0;
                     global.var_concentration_stored_lag = 0;
                     global.var_concentration_accumulated_lag = 0;
+                    with (obj_audioManger) { play_combo_ten(); }
                 }
             }
             else // obj_snakeHead_2
@@ -111,12 +113,14 @@ function sc_eatFreshGrape()
                 if (global.var_combo_p2 == 5)
                 {
                     with (other) { sc_activateConcentration(); }
+                    with (obj_audioManger) { play_combo_five(); }
                 }
                 else if (global.var_combo_p2 == 10)
                 {
                     global.var_input_lag_p2 = 0;
                     global.var_concentration_stored_lag_p2 = 0;
                     global.var_concentration_accumulated_lag_p2 = 0;
+                    with (obj_audioManger) { play_combo_ten(); }
                 }
             }
             
