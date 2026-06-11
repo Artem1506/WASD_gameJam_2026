@@ -19,6 +19,14 @@ global.var_concentration_timer = 0;
 global.var_concentration_stored_lag = 0;
 global.var_concentration_accumulated_lag = 0;
 
+// Инициализация переменных для Игрока 2
+global.var_input_lag_p2 = 0;
+global.var_combo_p2 = 0;
+global.var_concentration_active_p2 = false;
+global.var_concentration_timer_p2 = 0;
+global.var_concentration_stored_lag_p2 = 0;
+global.var_concentration_accumulated_lag_p2 = 0;
+
 global.var_input_lag = 0;
 global.var_input_lag_increment = 0.1;
 global.var_input_lag_threshold = 1.5;
@@ -44,7 +52,16 @@ global.arena_height_cells = 18;
 instance_create_layer(0, 0, "Instances", obj_grapeFresh);
 
 // ============================================================================
-instance_create_layer(x, y, "Instances", obj_snakeHead);
+// В одиночной игре спавним змейку динамически, в мультиплеере змейки pre-placed в комнате
+if (!variable_global_exists("var_is_multiplayer"))
+{
+    global.var_is_multiplayer = false;
+}
+
+if (!global.var_is_multiplayer)
+{
+    instance_create_layer(640, 352, "Instances", obj_snakeHead);
+}
 // ============================================================================
 
 surf_game = -1;

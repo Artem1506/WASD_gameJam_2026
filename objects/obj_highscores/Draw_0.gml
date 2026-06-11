@@ -7,8 +7,13 @@ var text_color = c_white;
 
 // Отрисовка заголовка таблицы рекордов по центру
 draw_set_color(text_color);
-draw_set_font(f_textRus)
-draw_text(x + 200, y, "ТАБЛИЦА РЕКОРДОВ:");
+draw_set_font(f_textRus);
+var title = "ТАБЛИЦА РЕКОРДОВ (СОЛО):";
+if (variable_global_exists("var_is_multiplayer") && global.var_is_multiplayer)
+{
+    title = "РЕКОРДЫ (2 ИГРОКА):";
+}
+draw_text(x + 200, y, title);
 
 draw_set_halign(fa_left);
 draw_set_color(text_color);

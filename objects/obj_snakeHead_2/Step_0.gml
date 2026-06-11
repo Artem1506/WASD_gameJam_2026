@@ -1,0 +1,81 @@
+/// @description Обновление таймеров, ввода и движения второй змейки
+
+// Анимация пошагового поворота головы змейки
+if (is_rotating)
+{
+    rotation_timer += delta_time / 1000000;
+    
+    var diff = angle_difference(rotation_target_angle, rotation_start_angle);
+    var total_steps = round(abs(diff) / 30);
+    
+    if (total_steps > 0)
+    {
+        var step_dur = 0.3 / total_steps;
+        var current_step = floor(rotation_timer / step_dur);
+        current_step = clamp(current_step, 0, total_steps);
+        
+        image_angle = rotation_start_angle + current_step * 30 * sign(diff);
+    }
+    
+    if (rotation_timer >= 0.3)
+    {
+        image_angle = rotation_target_angle;
+        is_rotating = false;
+    }
+}
+
+// Обновление индекса кадра анимации поедания (даже если не рисуем, сохраняем для совместимости)
+if (is_eating)
+{
+    eat_index += 10 * (delta_time / 1000000);
+    var _eat_frames = sprite_get_number(spr_snakeHeadEat);
+    if (eat_index >= _eat_frames)
+    {
+        is_eating = false;
+        eat_index = 0;
+    }
+}
+
+// Обновление индекса кадра анимации звезд при столкновении
+if (show_stars)
+{
+    stars_index += 5 * (delta_time / 1000000);
+    var _frames = sprite_get_number(spr_transparentStars);
+    if (_frames > 0)
+    {
+        stars_index = stars_index % _frames;
+    }
+}
+
+// Отсчитываем таймер стартовой задержки, если он еще не истек
+if (start_delay_timer > 0)
+{
+    start_delay_timer -= delta_time / 1000000;
+}
+else
+{
+    move_timer += delta_time / 1000000;
+}
+
+// Ввод доступен только если лаг ввода Игрока 2 не достиг критического порога
+if (global.var_input_lag_p2 < global.var_input_lag_threshold)
+{
+    sc_handleInput();
+}
+else
+{
+    show_debug_message("PLAYER 2 GAME OVER");
+}
+
+if (move_timer >= move_delay)
+{
+    move_timer = 0;
+
+    sc_updateSnake();
+}
+
+// Конец игры для игрока 2 при превышении лимита лага
+if (global.var_input_lag_p2 >= global.var_input_lag_threshold)
+{
+	move_delay = 10;
+}

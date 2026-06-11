@@ -1,15 +1,26 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-// Если лаг ввода превысил критический порог и таймер еще не запущен
-if (global.var_input_lag >= global.var_input_lag_threshold){
+// Если лаг ввода одной из змеек превысил критический порог и таймер еще не запущен
+if (!variable_global_exists("var_is_multiplayer"))
+{
+    global.var_is_multiplayer = false;
+}
+
+var p1_drunk = (global.var_input_lag >= global.var_input_lag_threshold);
+var p2_drunk = (global.var_is_multiplayer && global.var_input_lag_p2 >= global.var_input_lag_threshold);
+
+if (p1_drunk || p2_drunk) {
 	if (game_over_timer == -1)
     {
         game_over_timer = 5.0; // Запускаем 5-секундный таймер
         
         audio_stop_sound(snd_musicLoop);
 		audio_play_sound(snd_gameOver, 100, false); 
-		audio_sound_gain(obj_audioManger.loop_sound_id, 0, 500); 
+		with (obj_audioManger)
+        {
+            if (loop_sound_id != -1) audio_sound_gain(loop_sound_id, 0, 500); 
+        }
 	}
 }
 
@@ -38,7 +49,7 @@ if (show_traffic_light)
     }
 }
 
-// Обновление таймера концентрации
+// Обновление таймера концентрации Игрока 1
 if (global.var_concentration_active)
 {
     global.var_concentration_timer -= delta_time / 1000000;
@@ -49,5 +60,19 @@ if (global.var_concentration_active)
         
         // Возвращаем сохраненный инпут-лаг + изменения за время концентрации
         global.var_input_lag = max(0, global.var_concentration_stored_lag + global.var_concentration_accumulated_lag);
+    }
+}
+
+// Обновление таймера концентрации Игрока 2
+if (global.var_is_multiplayer && global.var_concentration_active_p2)
+{
+    global.var_concentration_timer_p2 -= delta_time / 1000000;
+    if (global.var_concentration_timer_p2 <= 0)
+    {
+        global.var_concentration_active_p2 = false;
+        global.var_concentration_timer_p2 = 0;
+        
+        // Возвращаем сохраненный инпут-лаг + изменения за время концентрации для P2
+        global.var_input_lag_p2 = max(0, global.var_concentration_stored_lag_p2 + global.var_concentration_accumulated_lag_p2);
     }
 }

@@ -25,11 +25,14 @@ function sc_pushCommand(dx, dy)
         exit;
     }
 
+    // Задаем лаг в зависимости от того, какая змейка опрашивается
+    var lag = (object_index == obj_snakeHead) ? global.var_input_lag : global.var_input_lag_p2;
+
     var command =
     {
         dir_x : dx,
         dir_y : dy,
-        execute_time : current_time + (global.var_input_lag * 1000)
+        execute_time : current_time + (lag * 1000)
     };
 
     array_push(input_queue, command);
@@ -37,17 +40,29 @@ function sc_pushCommand(dx, dy)
 
 function sc_addInputCommand()
 {
-    // Опрашиваем нажатия клавиш независимо для исключения диагонального движения
-    var pressed_w = keyboard_check_pressed(ord("W"));
-    var pressed_s = keyboard_check_pressed(ord("S"));
-    var pressed_a = keyboard_check_pressed(ord("A"));
-    var pressed_d = keyboard_check_pressed(ord("D"));
+    var pressed_up, pressed_down, pressed_left, pressed_right;
+
+    // Опрашиваем клавиши в зависимости от того, какая это змейка
+    if (object_index == obj_snakeHead)
+    {
+        pressed_up = keyboard_check_pressed(ord("W"));
+        pressed_down = keyboard_check_pressed(ord("S"));
+        pressed_left = keyboard_check_pressed(ord("A"));
+        pressed_right = keyboard_check_pressed(ord("D"));
+    }
+    else // obj_snakeHead_2
+    {
+        pressed_up = keyboard_check_pressed(vk_up);
+        pressed_down = keyboard_check_pressed(vk_down);
+        pressed_left = keyboard_check_pressed(vk_left);
+        pressed_right = keyboard_check_pressed(vk_right);
+    }
 
     // Добавляем команды по отдельности. Если нажаты две клавиши одновременно, они запишутся как последовательность шагов.
-    if (pressed_w) sc_pushCommand(0, -1);
-    if (pressed_s) sc_pushCommand(0, 1);
-    if (pressed_a) sc_pushCommand(-1, 0);
-    if (pressed_d) sc_pushCommand(1, 0);
+    if (pressed_up) sc_pushCommand(0, -1);
+    if (pressed_down) sc_pushCommand(0, 1);
+    if (pressed_left) sc_pushCommand(-1, 0);
+    if (pressed_right) sc_pushCommand(1, 0);
 }
 
 function sc_processInputQueue()
