@@ -92,12 +92,14 @@ function sc_eatFreshGrape()
             if (global.var_combo == 5)
             {
                 sc_activateConcentration();
+				audio_play_sound(snd_comboFive, 1, false);
             }
             else if (global.var_combo == 10)
             {
                 global.var_input_lag = 0;
                 global.var_concentration_stored_lag = 0;
                 global.var_concentration_accumulated_lag = 0;
+				audio_play_sound(snd_comboTen, 1, false);
             }
             
             // Запуск анимации поедания на голове змейки

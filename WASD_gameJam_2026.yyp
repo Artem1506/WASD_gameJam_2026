@@ -68,6 +68,8 @@
     {"id":{"name":"snd_blackoutAmb","path":"sounds/snd_blackoutAmb/snd_blackoutAmb.yy",},},
     {"id":{"name":"snd_click","path":"sounds/snd_click/snd_click.yy",},},
     {"id":{"name":"snd_collision","path":"sounds/snd_collision/snd_collision.yy",},},
+    {"id":{"name":"snd_comboFive","path":"sounds/snd_comboFive/snd_comboFive.yy",},},
+    {"id":{"name":"snd_comboTen","path":"sounds/snd_comboTen/snd_comboTen.yy",},},
     {"id":{"name":"snd_eatFreshD","path":"sounds/snd_eatFreshD/snd_eatFreshD.yy",},},
     {"id":{"name":"snd_eatMedsB","path":"sounds/snd_eatMedsB/snd_eatMedsB.yy",},},
     {"id":{"name":"snd_eatRottenA","path":"sounds/snd_eatRottenA/snd_eatRottenA.yy",},},
