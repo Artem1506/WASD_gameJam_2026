@@ -73,22 +73,28 @@ if (combo_val >= 5)
     }
 }
 
-// 2. Экспериментальный эффект вспышки шкалы: отрисовка ui_comboBar5 на 0.3 секунды при росте комбо
+// 2. Отрисовка всплывающего спрайта ui_combo со смещением x-230, y+5 (по первоначальной логике при комбо = 5 или 10)
+var combo_alpha = 0;
 if (combo_show_timer > 0)
 {
-    if (main_sprite != ui_comboBar5)
+    combo_alpha = 1.0;
+}
+else if (combo_fade_timer > 0)
+{
+    combo_alpha = combo_fade_timer; // Затухание от 1.0 до 0.0
+}
+
+if (combo_alpha > 0)
+{
+    draw_sprite_ext(ui_combo, 0, x, y + 32, 1, 1, 0, c_white, combo_alpha);
+}
+
+// 3. Рисуем активные системы частиц комбо вручную на GUI-слое (поверх HUD)
+for (var i = 0; i < array_length(combo_effect_systems); i++)
+{
+    var sys = combo_effect_systems[i].system;
+    if (part_system_exists(sys))
     {
-        // Отрисовываем ui_comboBar5 поверх основного спрайта комбо
-        draw_sprite(ui_comboBar5, 0, x, y);
-    }
-    else
-    {
-        // Если основной спрайт равен ui_comboBar5, проверяем дополнительный
-        var draw_extra_sprite = (combo_val == 5) ? ui_comboBar0 : extra_sprite;
-        if (draw_extra_sprite != -1 && draw_extra_sprite != ui_comboBar5)
-        {
-            // Отрисовываем ui_comboBar5 поверх дополнительного спрайта комбо
-            draw_sprite(ui_comboBar5, 0, x + 105, y);
-        }
+        part_system_drawit(sys);
     }
 }

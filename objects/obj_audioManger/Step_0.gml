@@ -7,24 +7,30 @@ if (instance_exists(obj_pause) && obj_pause.is_paused) exit;
 if (room != current_playing_room)
 {
     // Гарантированно и принудительно останавливаем проигрывание всех фоновых ассетов звуков
-    if (audio_exists(snd_startRoomMusic))
-    {
+    if (audio_exists(snd_startRoomMusic)){
         audio_stop_sound(snd_startRoomMusic);
     }
-    if (audio_exists(snd_musicLoopIntro))
-    {
+    if (audio_exists(snd_musicLoopIntro)){
         audio_stop_sound(snd_musicLoopIntro);
     }
-    if (audio_exists(snd_musicLoop))
-    {
+    if (audio_exists(snd_musicLoop)){
         audio_stop_sound(snd_musicLoop);
     }
-
-    var blackout_sound = asset_get_index("snd_blackoutAmb");
-    if (blackout_sound != -1)
-    {
-        audio_stop_sound(blackout_sound);
+    if (snd_blackoutAmb != -1){
+        audio_stop_sound(snd_blackoutAmb);
     }
+    if (audio_exists(snd_pauseMusic)){
+        audio_stop_sound(snd_pauseMusic);
+    }
+
+    // Принудительно останавливаем игровые звуки, которые могли остаться на паузе
+    audio_stop_sound(snd_eatFreshD);
+    audio_stop_sound(snd_eatRottenA);
+    audio_stop_sound(snd_eatMedsB);
+    audio_stop_sound(snd_grapeSpawn);
+    audio_stop_sound(snd_medsSpawn);
+    audio_stop_sound(snd_collision);
+    audio_stop_sound(snd_gameOver);
 
     // Дополнительно останавливаем по конкретным ID потоков
     if (current_music_sound_id != -1 && audio_is_playing(current_music_sound_id))
@@ -44,6 +50,12 @@ if (room != current_playing_room)
         audio_stop_sound(loop_sound_id);
     }
     loop_sound_id = -1;
+
+    if (pause_sound_id != -1 && audio_is_playing(pause_sound_id))
+    {
+        audio_stop_sound(pause_sound_id);
+    }
+    pause_sound_id = -1;
 
     // Сбрасываем переменные состояния для уровня rm_main
     intro_started = false;

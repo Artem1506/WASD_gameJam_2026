@@ -57,11 +57,11 @@ pause_audio = function()
 {
     audio_pause_all();
     
-    // Закомментированный код для воспроизведения snd_pause
-    // if (audio_exists(snd_pause))
-    // {
-    //     pause_sound_id = audio_play_sound(snd_pause, 10, true);
-    // }
+    // Воспроизводим фоновую музыку паузы зациклено
+    if (audio_exists(snd_pauseMusic))
+    {
+        pause_sound_id = audio_play_sound(snd_pauseMusic, 10, true);
+    }
 }
 
 /**
@@ -69,12 +69,16 @@ pause_audio = function()
  */
 resume_audio = function()
 {
-    // Закомментированный код для остановки snd_pause
-    // if (pause_sound_id != -1)
-    // {
-    //     audio_stop_sound(pause_sound_id);
-    //     pause_sound_id = -1;
-    // }
+    // Останавливаем фоновую музыку паузы
+    if (pause_sound_id != -1)
+    {
+        audio_stop_sound(pause_sound_id);
+        pause_sound_id = -1;
+    }
+    if (audio_exists(snd_pauseMusic))
+    {
+        audio_stop_sound(snd_pauseMusic);
+    }
     
     audio_resume_all();
 }
