@@ -45,11 +45,7 @@ function sc_updateSnake()
 
     if (other_head != noone)
     {
-        var other_next_x = other_head.grid_x + other_head.dir_x;
-        var other_next_y = other_head.grid_y + other_head.dir_y;
-        
-        if ((next_grid_x == other_head.grid_x && next_grid_y == other_head.grid_y) ||
-            (next_grid_x == other_next_x && next_grid_y == other_next_y))
+        if (next_grid_x == other_head.grid_x && next_grid_y == other_head.grid_y)
         {
             audio_play_sound(snd_collision, 1, false);
             

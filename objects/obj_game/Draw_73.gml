@@ -7,6 +7,10 @@ shader_set(sh_inputLag);
 
 var _time = current_time * 0.001;
 var _lag = global.var_input_lag;
+if (variable_global_exists("var_is_multiplayer") && global.var_is_multiplayer)
+{
+    _lag = max(global.var_input_lag, global.var_input_lag_p2);
+}
 var _shader = sh_inputLag;
 
 shader_set_uniform_f(
