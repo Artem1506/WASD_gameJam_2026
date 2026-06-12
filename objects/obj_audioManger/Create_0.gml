@@ -49,6 +49,14 @@ play_eat_pill = function()
 }
 
 /**
+ * Воспроизводит звук поедания каски
+ */
+play_eat_helmet = function()
+{
+    audio_play_sound(snd_eatMedsB, 1, false);
+}
+
+/**
  * Воспроизводит звук достижения 5 комбо (snd_comboFive)
  */
 play_combo_five = function()

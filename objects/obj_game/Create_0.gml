@@ -73,5 +73,8 @@ game_over_timer = -1;
 show_traffic_light = true;
 traffic_light_index = 0;
 
+// Глобальный таймер спавна защитной каски
+global.helmet_spawn_timer = -1;
+
 // Запуск циклического таймера спавна таблетки
 alarm[0] = 60;

@@ -21,6 +21,15 @@ function sc_spawnRandomPosition()
             }
         }
 
+        // snake head 2
+        with (obj_snakeHead_2)
+        {
+            if (other.grid_x == grid_x && other.grid_y == grid_y)
+            {
+                valid = false;
+            }
+        }
+
         // snake segments
         with (obj_snakeSegment)
         {
@@ -56,6 +65,18 @@ function sc_spawnRandomPosition()
 
         // pills
         with (obj_pill)
+        {
+            if (id != other.id)
+            {
+                if (other.grid_x == grid_x && other.grid_y == grid_y)
+                {
+                    valid = false;
+                }
+            }
+        }
+
+        // helmets
+        with (obj_helmet)
         {
             if (id != other.id)
             {
@@ -307,5 +328,34 @@ function sc_recalculateSnakeSpeed(head)
             global.var_move_delay_min,
             global.var_move_delay_min + (global.var_snake_initial_speed - global.var_move_delay_min) * exp(global.var_speed_increment * global.var_score) + speed_penalties
         );
+    }
+}
+
+/// @description Обработка поедания защитной каски
+function sc_eatHelmet()
+{
+    with (obj_helmet)
+    {
+        if (
+            other.grid_x == grid_x
+            && other.grid_y == grid_y
+        )
+        {
+            // Змейка, съевшая каску, получает защитное состояние
+            other.is_helmet = true;
+
+            // Запуск анимации поедания на голове змейки
+            other.is_eating = true;
+            other.eat_index = 0;
+
+            // Воспроизводим звук через аудио-менеджер
+            with (obj_audioManger)
+            {
+                play_eat_helmet();
+            }
+
+            instance_destroy();
+            break;
+        }
     }
 }

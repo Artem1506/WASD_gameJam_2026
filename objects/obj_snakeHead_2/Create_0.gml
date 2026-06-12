@@ -65,3 +65,6 @@ stars_index = 0;
 // Переменные для анимации поедания
 is_eating = false;
 eat_index = 0;
+
+// Состояние наличия защитной каски
+is_helmet = false;

@@ -76,3 +76,25 @@ if (global.var_is_multiplayer && global.var_concentration_active_p2)
         global.var_input_lag_p2 = max(0, global.var_concentration_stored_lag_p2 + global.var_concentration_accumulated_lag_p2);
     }
 }
+
+// Спавн каски
+if (!instance_exists(obj_helmet))
+{
+    if (global.helmet_spawn_timer == -1)
+    {
+        global.helmet_spawn_timer = irandom_range(5, 15);
+    }
+    else
+    {
+        global.helmet_spawn_timer -= delta_time / 1000000;
+        if (global.helmet_spawn_timer <= 0)
+        {
+            instance_create_layer(0, 0, "Instances", obj_helmet);
+            global.helmet_spawn_timer = -1;
+        }
+    }
+}
+else
+{
+    global.helmet_spawn_timer = -1;
+}

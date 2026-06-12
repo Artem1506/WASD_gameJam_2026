@@ -49,42 +49,9 @@ function sc_updateSnake()
         {
             audio_play_sound(snd_collision, 1, false);
             
-            // Накладываем штрафы и останавливаем текущую змейку
-            dir_x = 0;
-            dir_y = 0;
-            next_dir_x = 0;
-            next_dir_y = 0;
-            input_queue = [];
-            
-            sc_changeInputLag(global.var_input_lag_increment);
-            speed_penalties += global.var_speed_increment_2;
-            sc_recalculateSnakeSpeed(id);
-            
-            if (object_index == obj_snakeHead) global.var_combo = 0;
-            else global.var_combo_p2 = 0;
-            
-            show_stars = true;
-            stars_index = 0;
-            
-            // Накладываем штрафы и останавливаем вторую змейку
-            with (other_head)
-            {
-                dir_x = 0;
-                dir_y = 0;
-                next_dir_x = 0;
-                next_dir_y = 0;
-                input_queue = [];
-                
-                sc_changeInputLag(global.var_input_lag_increment);
-                speed_penalties += global.var_speed_increment_2;
-                sc_recalculateSnakeSpeed(id);
-                
-                if (object_index == obj_snakeHead) global.var_combo = 0;
-                else global.var_combo_p2 = 0;
-                
-                show_stars = true;
-                stars_index = 0;
-            }
+            // Применяем штрафы к обеим змейкам
+            sc_applyCollisionPenalty(id);
+            sc_applyCollisionPenalty(other_head);
             
             exit;
         }
@@ -95,29 +62,7 @@ function sc_updateSnake()
     {
         audio_play_sound(snd_collision, 1, false);
 		
-        dir_x = 0;
-        dir_y = 0;
-        next_dir_x = 0;
-        next_dir_y = 0;
-        input_queue = [];
-        
-        sc_changeInputLag(global.var_input_lag_increment);
-        speed_penalties += global.var_speed_increment_2;
-        sc_recalculateSnakeSpeed(id);
-        
-        // Сбрасываем комбо при столкновении со стеной
-        if (object_index == obj_snakeHead)
-        {
-            global.var_combo = 0;
-        }
-        else
-        {
-            global.var_combo_p2 = 0;
-        }
-        
-        // Активируем анимацию звезд при столкновении
-        show_stars = true;
-        stars_index = 0;
+        sc_applyCollisionPenalty(id);
         
         exit;
     }
@@ -127,27 +72,7 @@ function sc_updateSnake()
     {
         audio_play_sound(snd_collision, 1, false, 1, 0.34); // при столкновения с хвостом звонкий удар столкновения не проигрывается 
 		
-        dir_x = 0;
-        dir_y = 0;
-        next_dir_x = 0;
-        next_dir_y = 0;
-        input_queue = [];
-        
-        sc_changeInputLag(global.var_input_lag_increment);
-        
-        // Сбрасываем комбо при столкновении с хвостом
-        if (object_index == obj_snakeHead)
-        {
-            global.var_combo = 0;
-        }
-        else
-        {
-            global.var_combo_p2 = 0;
-        }
-        
-        // Активируем анимацию звезд при столкновении
-        show_stars = true;
-        stars_index = 0;
+        sc_applyCollisionPenalty(id);
         
         exit;
     }
@@ -200,6 +125,7 @@ function sc_updateSnake()
     sc_eatFreshGrape();
     sc_eatRottenGrape();
     sc_eatPill();
+    sc_eatHelmet();
 }
 
 function sc_checkWallCollision(next_x, next_y)
@@ -231,4 +157,46 @@ function sc_checkTailCollision(next_x, next_y)
         }
     }
     return collision_found;
+}
+
+/// @description Применение штрафов при столкновении с учетом наличия каски
+function sc_applyCollisionPenalty(head)
+{
+    with (head)
+    {
+        // Полная остановка змейки и сброс очереди ввода
+        dir_x = 0;
+        dir_y = 0;
+        next_dir_x = 0;
+        next_dir_y = 0;
+        input_queue = [];
+
+        // Снижение скорости
+        speed_penalties += global.var_speed_increment_2;
+        sc_recalculateSnakeSpeed(id);
+
+        if (is_helmet)
+        {
+            // Снимаем защиту каски
+            is_helmet = false;
+            
+            // Звездочки не показываем
+            show_stars = false;
+            
+            // Степень опьянения не накладываем, комбо не сбрасываем
+        }
+        else
+        {
+            // Увеличиваем инпут-лаг (накладываем степень опьянения)
+            sc_changeInputLag(global.var_input_lag_increment);
+
+            // Сбрасываем комбо
+            if (object_index == obj_snakeHead) global.var_combo = 0;
+            else global.var_combo_p2 = 0;
+
+            // Активируем анимацию звезд
+            show_stars = true;
+            stars_index = 0;
+        }
+    }
 }
