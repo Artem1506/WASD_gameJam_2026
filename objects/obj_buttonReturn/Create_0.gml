@@ -3,9 +3,9 @@
 
 event_inherited();
 
-normal_style = ui_buttonInfo_normal;
-hovered_style = ui_buttonInfo_hovered;
-pressed_style = ui_buttonInfo_pressed;
+normal_style = ui_buttonReturn_normal;
+hovered_style = ui_buttonReturn_hovered;
+pressed_style = ui_buttonReturn_pressed;
 
 callback_function = function() {
 	if (obj_pause.is_paused == true) {

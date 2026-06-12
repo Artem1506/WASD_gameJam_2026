@@ -40,11 +40,11 @@ if (spr_conc != -1)
 {
     if (global.var_concentration_active && spr_conc_act != -1)
     {
-        draw_sprite(spr_conc_act, floor(concentration_anim_index), x + 46, y + 46);
+        draw_sprite(spr_conc_act, floor(concentration_anim_index), x + 32, y + 32);
     }
     else
     {
-        draw_sprite(spr_conc, 0, x + 46, y + 46);
+        draw_sprite(spr_conc, 0, x + 32, y + 32);
     }
 }
 
@@ -54,7 +54,7 @@ if (combo_val >= 5)
     var draw_extra_sprite = (combo_val == 5) ? ui_comboBar0 : extra_sprite;
     if (draw_extra_sprite != -1)
     {
-        draw_sprite(draw_extra_sprite, 0, x + 105, y);
+        draw_sprite(draw_extra_sprite, 0, x + 84, y);
         
         // Отрисовка значка сброса лага поверх дополнительного бара
         var spr_reset = ui_resetLag;
@@ -63,11 +63,11 @@ if (combo_val >= 5)
         {
             if (reset_lag_active_timer > 0 && spr_reset_act != -1)
             {
-                draw_sprite(spr_reset_act, floor(reset_lag_anim_index), x + 151, y + 46);
+                draw_sprite(spr_reset_act, floor(reset_lag_anim_index), x + 116, y + 32);
             }
             else
             {
-                draw_sprite(spr_reset, 0, x + 151, y + 46);
+                draw_sprite(spr_reset, 0, x + 116, y + 32);
             }
         }
     }

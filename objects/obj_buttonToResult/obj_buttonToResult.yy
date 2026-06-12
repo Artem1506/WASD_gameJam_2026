@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"ui_buttonMenu_normal",
-    "path":"sprites/ui_buttonMenu_normal/ui_buttonMenu_normal.yy",
+    "name":"ui_buttonResult_normal",
+    "path":"sprites/ui_buttonResult_normal/ui_buttonResult_normal.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -49,7 +49,7 @@ if (is_paused != last_paused)
             HUD_layer = "Instances";
         }
         
-        btn_return = instance_create_layer(96, 320, HUD_layer, obj_buttonReturn);
+        btn_return = instance_create_layer(96, 256, HUD_layer, obj_buttonReturn);
         btn_to_result = instance_create_layer(96, 480, HUD_layer, obj_buttonToResult);
     }
     else

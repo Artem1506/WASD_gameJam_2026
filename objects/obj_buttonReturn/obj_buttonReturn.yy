@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"ui_buttonInfo_normal",
-    "path":"sprites/ui_buttonInfo_normal/ui_buttonInfo_normal.yy",
+    "name":"ui_buttonReturn_normal",
+    "path":"sprites/ui_buttonReturn_normal/ui_buttonReturn_normal.yy",
   },
   "spriteMaskId":null,
   "visible":true,

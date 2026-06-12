@@ -3,9 +3,9 @@
 
 event_inherited();
 
-normal_style = ui_buttonMenu_normal;
-hovered_style = ui_buttonMenu_hovered;
-pressed_style = ui_buttonMenu_pressed;
+normal_style = ui_buttonResult_normal;
+hovered_style = ui_buttonResult_hovered;
+pressed_style = ui_buttonResult_pressed;
 
 callback_function = function() {
 	room_goto(rm_result);

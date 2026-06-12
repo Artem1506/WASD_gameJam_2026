@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"ui_buttonStartGame_normal",
-    "path":"sprites/ui_buttonStartGame_normal/ui_buttonStartGame_normal.yy",
+    "name":"ui_button2Players_normal",
+    "path":"sprites/ui_button2Players_normal/ui_button2Players_normal.yy",
   },
   "spriteMaskId":null,
   "visible":true,
