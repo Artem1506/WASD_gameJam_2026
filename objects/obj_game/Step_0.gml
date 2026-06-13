@@ -78,7 +78,7 @@ if (global.var_is_multiplayer && global.var_concentration_active_p2)
 }
 
 // Спавн каски
-if (!instance_exists(obj_helmet))
+if (!instance_exists(obj_helmet) && (obj_snakeHead.is_helmet == false))
 {
     if (global.helmet_spawn_timer == -1)
     {

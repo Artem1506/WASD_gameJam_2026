@@ -120,16 +120,17 @@ function sc_eatFreshGrape()
             
             if (other.object_index == obj_snakeHead)
             {
+                var prev_combo = global.var_combo;
                 // Увеличиваем комбо (не больше 10) для P1
                 global.var_combo = min(10, global.var_combo + 1);
                 
                 // Активация эффектов при наборе комбо
-                if (global.var_combo == 5)
+                if (global.var_combo == 5 && prev_combo < 5)
                 {
                     with (other) { sc_activateConcentration(); }
                     with (obj_audioManger) { play_combo_five(); }
                 }
-                else if (global.var_combo == 10)
+                else if (global.var_combo == 10 && prev_combo < 10)
                 {
                     global.var_input_lag = 0;
                     global.var_concentration_stored_lag = 0;
@@ -139,16 +140,17 @@ function sc_eatFreshGrape()
             }
             else // obj_snakeHead_2
             {
+                var prev_combo_p2 = global.var_combo_p2;
                 // Увеличиваем комбо (не больше 10) для P2
                 global.var_combo_p2 = min(10, global.var_combo_p2 + 1);
                 
                 // Активация эффектов при наборе комбо
-                if (global.var_combo_p2 == 5)
+                if (global.var_combo_p2 == 5 && prev_combo_p2 < 5)
                 {
                     with (other) { sc_activateConcentration(); }
                     with (obj_audioManger) { play_combo_five(); }
                 }
-                else if (global.var_combo_p2 == 10)
+                else if (global.var_combo_p2 == 10 && prev_combo_p2 < 10)
                 {
                     global.var_input_lag_p2 = 0;
                     global.var_concentration_stored_lag_p2 = 0;
