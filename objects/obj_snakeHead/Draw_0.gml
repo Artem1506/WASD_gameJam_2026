@@ -21,6 +21,22 @@ else
     draw_self();
 }
 
+// Рисуем активную каску поверх головы змейки
+if (is_helmet)
+{
+    draw_sprite_ext(
+        spr_helmetActiv,
+        helmet_index,
+        x,
+        y,
+        image_xscale,
+        image_yscale,
+        image_angle,
+        image_blend,
+        image_alpha
+    );
+}
+
 // Если произошло столкновение, рисуем зацикленную анимацию звезд
 if (show_stars)
 { 

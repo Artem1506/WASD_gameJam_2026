@@ -126,6 +126,7 @@ function sc_updateSnake()
     sc_eatRottenGrape();
     sc_eatPill();
     sc_eatHelmet();
+    sc_eatCleaner();
 }
 
 function sc_checkWallCollision(next_x, next_y)

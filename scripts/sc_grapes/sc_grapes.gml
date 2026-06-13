@@ -87,6 +87,18 @@ function sc_spawnRandomPosition()
             }
         }
 
+        // cleaners
+        with (obj_cleaner)
+        {
+            if (id != other.id)
+            {
+                if (other.grid_x == grid_x && other.grid_y == grid_y)
+                {
+                    valid = false;
+                }
+            }
+        }
+
         if (valid)
         {
             x = px;
@@ -352,6 +364,61 @@ function sc_eatHelmet()
             with (obj_audioManger)
             {
                 play_eat_helmet();
+            }
+
+            instance_destroy();
+            break;
+        }
+    }
+}
+
+/// @description Обработка поедания чистильщика
+function sc_eatCleaner()
+{
+    with (obj_cleaner)
+    {
+        if (
+            other.grid_x == grid_x
+            && other.grid_y == grid_y
+        )
+        {
+            // Собираем список всех плохих ягод
+            var rotten_list = [];
+            with (obj_grapeRotten)
+            {
+                array_push(rotten_list, id);
+            }
+
+            var total = array_length(rotten_list);
+            if (total > 0)
+            {
+                // Вычисляем 50% от количества ягод (округляем вверх)
+                var to_destroy_count = ceil(total * 0.5);
+
+                // Удаляем случайные ягоды
+                for (var i = 0; i < to_destroy_count; i++)
+                {
+                    var idx = irandom(array_length(rotten_list) - 1);
+                    var inst = rotten_list[idx];
+                    if (instance_exists(inst))
+                    {
+                        with (inst)
+                        {
+                            instance_destroy();
+                        }
+                    }
+                    array_delete(rotten_list, idx, 1);
+                }
+            }
+
+            // Запуск анимации поедания на голове змейки
+            other.is_eating = true;
+            other.eat_index = 0;
+
+            // Воспроизводим звук через аудио-менеджер
+            with (obj_audioManger)
+            {
+                play_eat_pill();
             }
 
             instance_destroy();

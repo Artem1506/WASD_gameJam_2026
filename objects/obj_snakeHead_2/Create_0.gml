@@ -68,3 +68,4 @@ eat_index = 0;
 
 // Состояние наличия защитной каски
 is_helmet = false;
+helmet_index = 0;

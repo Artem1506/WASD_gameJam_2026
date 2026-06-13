@@ -48,6 +48,21 @@ if (show_stars)
     }
 }
 
+// Обновление индекса кадра анимации каски
+if (is_helmet)
+{
+    helmet_index += 10 * (delta_time / 1000000);
+    var _helmet_frames = sprite_get_number(spr_helmetActiv);
+    if (_helmet_frames > 0)
+    {
+        helmet_index = helmet_index % _helmet_frames;
+    }
+}
+else
+{
+    helmet_index = 0;
+}
+
 // Отсчитываем таймер стартовой задержки, если он еще не истек
 if (start_delay_timer > 0)
 {
