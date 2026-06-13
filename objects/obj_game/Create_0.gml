@@ -48,6 +48,14 @@ global.var_move_delay_min = 0.03;
 global.arena_width_cells = 37;
 global.arena_height_cells = 18;
 
+// Баланс: количество камней на арене
+stone_count = 5;
+
+// Спавним камни в случайных свободных ячейках
+repeat (stone_count)
+{
+    instance_create_layer(0, 0, "Instances", obj_stone);
+}
 
 instance_create_layer(0, 0, "Instances", obj_grapeFresh);
 
@@ -79,6 +87,9 @@ global.helmet_spawn_timer = -1;
 // Инициализация переменных чистильщика и запуск таймера спавна чистильщика (каждые 5 секунд)
 rotten_grape_count = 0;
 alarm[1] = 5 * 60;
+
+// Глобальный таймер спавна банана
+global.banan_spawn_timer = -1;
 
 // Запуск циклического таймера спавна таблетки
 alarm[0] = 60;

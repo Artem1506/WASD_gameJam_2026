@@ -62,6 +62,17 @@ else
     helmet_index = 0;
 }
 
+// Отсчет таймера ускорения банана
+if (banana_speed_timer > 0)
+{
+    banana_speed_timer -= delta_time / 1000000;
+    if (banana_speed_timer <= 0)
+    {
+        banana_speed_timer = 0;
+        sc_recalculateSnakeSpeed(id); // Восстанавливаем обычную скорость
+    }
+}
+
 // Отсчитываем таймер стартовой задержки, если он еще не истек
 if (start_delay_timer > 0)
 {

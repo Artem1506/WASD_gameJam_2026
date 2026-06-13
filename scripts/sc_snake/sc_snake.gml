@@ -77,6 +77,16 @@ function sc_updateSnake()
         exit;
     }
 
+    // Проверяем столкновение с камнем
+    if (sc_checkStoneCollision(next_grid_x, next_grid_y))
+    {
+        audio_play_sound(snd_collision, 1, false);
+		
+        sc_applyCollisionPenalty(id);
+        
+        exit;
+    }
+
     var prev_x = grid_x;
     var prev_y = grid_y;
 
@@ -127,6 +137,7 @@ function sc_updateSnake()
     sc_eatPill();
     sc_eatHelmet();
     sc_eatCleaner();
+    sc_eatBanan();
 }
 
 function sc_checkWallCollision(next_x, next_y)
@@ -200,4 +211,18 @@ function sc_applyCollisionPenalty(head)
             stars_index = 0;
         }
     }
+}
+
+function sc_checkStoneCollision(next_x, next_y)
+{
+    var collision_found = false;
+    with (obj_stone)
+    {
+        if (grid_x == next_x && grid_y == next_y)
+        {
+            collision_found = true;
+            break;
+        }
+    }
+    return collision_found;
 }

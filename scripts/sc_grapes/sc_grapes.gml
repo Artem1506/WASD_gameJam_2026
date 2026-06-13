@@ -99,6 +99,30 @@ function sc_spawnRandomPosition()
             }
         }
 
+        // Бананы
+        with (obj_banan)
+        {
+            if (id != other.id)
+            {
+                if (other.grid_x == grid_x && other.grid_y == grid_y)
+                {
+                    valid = false;
+                }
+            }
+        }
+
+        // Камни
+        with (obj_stone)
+        {
+            if (id != other.id)
+            {
+                if (other.grid_x == grid_x && other.grid_y == grid_y)
+                {
+                    valid = false;
+                }
+            }
+        }
+
         if (valid)
         {
             x = px;
@@ -338,10 +362,19 @@ function sc_recalculateSnakeSpeed(head)
 {
     with (head)
     {
-        move_delay = max(
+        var base_delay = max(
             global.var_move_delay_min,
             global.var_move_delay_min + (global.var_snake_initial_speed - global.var_move_delay_min) * exp(global.var_speed_increment * global.var_score) + speed_penalties
         );
+        
+        if (variable_instance_exists(id, "banana_speed_timer") && banana_speed_timer > 0)
+        {
+            move_delay = base_delay * 0.5;
+        }
+        else
+        {
+            move_delay = base_delay;
+        }
     }
 }
 
@@ -411,6 +444,84 @@ function sc_eatCleaner()
                     }
                     array_delete(rotten_list, idx, 1);
                 }
+            }
+
+            // Запуск анимации поедания на голове змейки
+            other.is_eating = true;
+            other.eat_index = 0;
+
+            // Воспроизводим звук через аудио-менеджер
+            with (obj_audioManger)
+            {
+                play_eat_pill();
+            }
+
+            instance_destroy();
+            break;
+        }
+    }
+}
+
+/// @description Обработка поедания банана
+function sc_eatBanan()
+{
+    with (obj_banan)
+    {
+        if (
+            other.grid_x == grid_x
+            && other.grid_y == grid_y
+        )
+        {
+            // Увеличиваем счет на заданное количество очков
+            global.var_score += score_value;
+
+            if (other.object_index == obj_snakeHead)
+            {
+                var prev_combo = global.var_combo;
+                // Увеличиваем комбо на заданное количество
+                global.var_combo = min(10, global.var_combo + combo_value);
+
+                // Активация эффектов при наборе комбо
+                if (global.var_combo >= 5 && prev_combo < 5)
+                {
+                    with (other) { sc_activateConcentration(); }
+                    with (obj_audioManger) { play_combo_five(); }
+                }
+                if (global.var_combo >= 10 && prev_combo < 10)
+                {
+                    global.var_input_lag = 0;
+                    global.var_concentration_stored_lag = 0;
+                    global.var_concentration_accumulated_lag = 0;
+                    with (obj_audioManger) { play_combo_ten(); }
+                }
+
+                // Эффект ускорения на заданное время
+                other.banana_speed_timer = speed_duration;
+                sc_recalculateSnakeSpeed(other);
+            }
+            else // obj_snakeHead_2
+            {
+                var prev_combo_p2 = global.var_combo_p2;
+                // Увеличиваем комбо на заданное количество для P2
+                global.var_combo_p2 = min(10, global.var_combo_p2 + combo_value);
+
+                // Активация эффектов при наборе комбо
+                if (global.var_combo_p2 >= 5 && prev_combo_p2 < 5)
+                {
+                    with (other) { sc_activateConcentration(); }
+                    with (obj_audioManger) { play_combo_five(); }
+                }
+                if (global.var_combo_p2 >= 10 && prev_combo_p2 < 10)
+                {
+                    global.var_input_lag_p2 = 0;
+                    global.var_concentration_stored_lag_p2 = 0;
+                    global.var_concentration_accumulated_lag_p2 = 0;
+                    with (obj_audioManger) { play_combo_ten(); }
+                }
+
+                // Эффект ускорения на заданное время для P2
+                other.banana_speed_timer = speed_duration;
+                sc_recalculateSnakeSpeed(other);
             }
 
             // Запуск анимации поедания на голове змейки

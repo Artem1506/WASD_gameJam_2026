@@ -98,3 +98,25 @@ else
 {
     global.helmet_spawn_timer = -1;
 }
+
+// Спавн банана
+if (!instance_exists(obj_banan))
+{
+    if (global.banan_spawn_timer == -1)
+    {
+        global.banan_spawn_timer = irandom_range(15, 30);
+    }
+    else
+    {
+        global.banan_spawn_timer -= delta_time / 1000000;
+        if (global.banan_spawn_timer <= 0)
+        {
+            instance_create_layer(0, 0, "Instances", obj_banan);
+            global.banan_spawn_timer = -1;
+        }
+    }
+}
+else
+{
+    global.banan_spawn_timer = -1;
+}
