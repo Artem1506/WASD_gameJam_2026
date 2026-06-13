@@ -83,6 +83,7 @@
     {"id":{"name":"snd_eatMedsB","path":"sounds/snd_eatMedsB/snd_eatMedsB.yy",},},
     {"id":{"name":"snd_eatRottenA","path":"sounds/snd_eatRottenA/snd_eatRottenA.yy",},},
     {"id":{"name":"snd_gameOver","path":"sounds/snd_gameOver/snd_gameOver.yy",},},
+    {"id":{"name":"snd_getHelmet","path":"sounds/snd_getHelmet/snd_getHelmet.yy",},},
     {"id":{"name":"snd_grapeSpawn","path":"sounds/snd_grapeSpawn/snd_grapeSpawn.yy",},},
     {"id":{"name":"snd_hover","path":"sounds/snd_hover/snd_hover.yy",},},
     {"id":{"name":"snd_medsSpawn","path":"sounds/snd_medsSpawn/snd_medsSpawn.yy",},},

@@ -53,7 +53,7 @@ play_eat_pill = function()
  */
 play_eat_helmet = function()
 {
-    audio_play_sound(snd_eatMedsB, 1, false);
+    audio_play_sound(snd_getHelmet, 1, false, 1, 0.11);
 }
 
 /**

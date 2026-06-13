@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"snd_comboTen",
+  "%Name":"snd_getHelmet",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,9 +10,9 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":2.708322,
+  "duration":1.5,
   "exportDir":"",
-  "name":"snd_comboTen",
+  "name":"snd_getHelmet",
   "parent":{
     "name":"sounds",
     "path":"folders/sounds.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_comboTen.wav",
-  "volume":0.28,
+  "soundFile":"snd_getHelmet.wav",
+  "volume":0.31,
 }
