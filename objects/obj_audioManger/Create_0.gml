@@ -49,6 +49,15 @@ play_eat_pill = function()
 }
 
 /**
+ * Воспроизводит звук поедания мусорки (snd_cleanField)
+ */
+play_clean_field = function()
+{
+    // Воспроизводим звук snd_cleanField с приоритетом 1, без зацикливания
+    audio_play_sound(snd_cleanField, 1, false);
+}
+
+/**
  * Воспроизводит звук поедания каски
  */
 play_eat_helmet = function()

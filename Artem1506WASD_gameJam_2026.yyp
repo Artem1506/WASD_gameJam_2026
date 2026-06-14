@@ -75,6 +75,7 @@
     {"id":{"name":"sh_blur","path":"shaders/sh_blur/sh_blur.yy",},},
     {"id":{"name":"sh_inputLag","path":"shaders/sh_inputLag/sh_inputLag.yy",},},
     {"id":{"name":"snd_blackoutAmb","path":"sounds/snd_blackoutAmb/snd_blackoutAmb.yy",},},
+    {"id":{"name":"snd_cleanField","path":"sounds/snd_cleanField/snd_cleanField.yy",},},
     {"id":{"name":"snd_click","path":"sounds/snd_click/snd_click.yy",},},
     {"id":{"name":"snd_collision","path":"sounds/snd_collision/snd_collision.yy",},},
     {"id":{"name":"snd_comboFive","path":"sounds/snd_comboFive/snd_comboFive.yy",},},
