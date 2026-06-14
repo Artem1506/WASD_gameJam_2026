@@ -453,7 +453,7 @@ function sc_eatCleaner()
             // Воспроизводим звук через аудио-менеджер
             with (obj_audioManger)
             {
-                play_eat_pill();
+                play_clean_field();
             }
 
             instance_destroy();
