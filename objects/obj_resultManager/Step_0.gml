@@ -6,10 +6,20 @@ if (is_entering_name)
     for (var i = 1; i <= string_length(keyboard_string); i++)
     {
         var char = string_char_at(keyboard_string, i);
-        var code = ord(string_upper(char));
-        if (code >= 65 && code <= 90) // Пропускаем строго латинские буквы A-Z
+        var upper_char = string_upper(char);
+        var code = ord(upper_char);
+        
+        // Допускаем:
+        // - Латинские буквы A-Z (65..90)
+        // - Цифры 0-9 (48..57)
+        // - Кириллические буквы А-Я (1040..1071)
+        // - Кириллическая буква Ё (1025)
+        if ((code >= 65 && code <= 90) || 
+            (code >= 48 && code <= 57) || 
+            (code >= 1040 && code <= 1071) || 
+            (code == 1025))
         {
-            filtered += string_upper(char);
+            filtered += upper_char;
         }
     }
     

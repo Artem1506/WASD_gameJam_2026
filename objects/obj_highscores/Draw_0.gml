@@ -32,13 +32,13 @@ for (var i = 0; i < 5; i++)
         var rec = highscores[i];
         var num_str = string(i + 1) + ".";
         
-        // Номер (колонка 1)
-        draw_text(start_x, start_y + i * spacing, num_str);
+        // Номер (колонка 1) и Имя игрока (колонка 2) в f_textRus
+        draw_set_font(f_textRus);
+        draw_text(start_x, start_y + i * spacing + 4, num_str);
+        draw_text(start_x + 80, start_y + i * spacing + 4, rec.name);
         
-        // Имя игрока (колонка 2)
-        draw_text(start_x + 80, start_y + i * spacing, rec.name);
-        
-        // Числовое значение рекорда (колонка 3, выровнена по правому краю)
+        // Числовое значение рекорда (колонка 3, выровнена по правому краю) в f_score
+        draw_set_font(f_score);
         draw_set_halign(fa_right);
         draw_text(start_x + 320, start_y + i * spacing, string(rec.score));
         draw_set_halign(fa_left); // Сбрасываем выравнивание

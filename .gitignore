@@ -61,6 +61,8 @@ Temporary Items
 # GMRT build directory
 Build
 
+.idea/
+
 # Antigravity
 .antigravity/
 presentation.md
