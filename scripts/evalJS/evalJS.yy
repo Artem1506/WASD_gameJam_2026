@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"evalJS",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"evalJS",
+  "parent":{
+    "name":"html5",
+    "path":"folders/html5.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

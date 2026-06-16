@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"game_init",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"game_init",
+  "parent":{
+    "name":"html5",
+    "path":"folders/html5.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

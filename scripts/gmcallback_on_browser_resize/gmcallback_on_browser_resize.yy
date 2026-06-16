@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"gmcallback_on_browser_resize",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"gmcallback_on_browser_resize",
+  "parent":{
+    "name":"html5",
+    "path":"folders/html5.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
