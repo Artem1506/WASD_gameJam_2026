@@ -30,7 +30,7 @@ if (is_paused && surface_exists(pause_surf))
     draw_surface(pause_surf, 0, 0);
     
     shader_reset();
-    
+ 
     // Отрисовываем полупрозрачное темное перекрытие поверх размытия для лучшей читаемости кнопок
     var old_color = draw_get_color();
     var old_alpha = draw_get_alpha();

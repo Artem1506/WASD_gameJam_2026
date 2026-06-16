@@ -22,15 +22,20 @@ if (is_paused != last_paused)
         // Активация паузы
         
         // Копируем содержимое экрана (application_surface) в буферную поверхность
-        if (surface_exists(application_surface))
-        {
-            pause_surf = surface_create(surface_get_width(application_surface), surface_get_height(application_surface));
-            surface_copy(pause_surf, 0, 0, application_surface);
-        }
-        else
-        {
-            pause_surf = -1;
-        }
+		if (surface_exists(application_surface)){
+			var _surf_w = surface_get_width(application_surface);
+			var _surf_h = surface_get_height(application_surface);
+    
+		// Создаем поверхность только если ее размеры строго больше нуля
+			if (_surf_w > 0 && _surf_h > 0){
+				pause_surf = surface_create(_surf_w, _surf_h);
+				surface_copy(pause_surf, 0, 0, application_surface);
+			} else {
+				pause_surf = -1;
+			}
+		} else {
+			pause_surf = -1;
+		}
         
         // Ставим все звуки на паузу через аудио-менеджер
         with (obj_audioManger)
@@ -39,15 +44,11 @@ if (is_paused != last_paused)
         }
         
         // Деактивируем все объекты, кроме этого контроллера и менеджера звуков
-        instance_deactivate_all(true);
-        instance_activate_object(obj_audioManger);
+		instance_deactivate_layer("Instances")
+		instance_deactivate_layer("HUD")
         
         // Создаем кнопки меню паузы на HUD слое
-        var HUD_layer = "HUD";
-        if (!layer_exists(HUD_layer))
-        {
-            HUD_layer = "Instances";
-        }
+        var HUD_layer = "System";
         
         btn_return = instance_create_layer(96, 256, HUD_layer, obj_buttonReturn);
         btn_to_result = instance_create_layer(96, 480, HUD_layer, obj_buttonToResult);

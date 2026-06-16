@@ -8,5 +8,6 @@ hovered_style = ui_buttonResult_hovered;
 pressed_style = ui_buttonResult_pressed;
 
 callback_function = function() {
+	instance_activate_all();
 	room_goto(rm_result);
 }
