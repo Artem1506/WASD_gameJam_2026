@@ -17,4 +17,4 @@ if (rotten_grape_count > rand_val)
 }
 
 // 4. Перезапускаем будильник на 5 секунд
-alarm[1] = 5 * 60;
+alarm[1] = 3 * 60;

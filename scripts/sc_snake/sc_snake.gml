@@ -183,10 +183,6 @@ function sc_applyCollisionPenalty(head)
         next_dir_y = 0;
         input_queue = [];
 
-        // Снижение скорости
-        speed_penalties += global.var_speed_increment_2;
-        sc_recalculateSnakeSpeed(id);
-
         if (is_helmet)
         {
             // Снимаем защиту каски
@@ -195,10 +191,14 @@ function sc_applyCollisionPenalty(head)
             // Звездочки не показываем
             show_stars = false;
             
-            // Степень опьянения не накладываем, комбо не сбрасываем
+            // Степень опьянения не накладываем, комбо не сбрасываем, скорость не снижаем
         }
         else
         {
+            // Снижение скорости (только при отсутствии каски)
+            speed_penalties += global.var_speed_increment_2;
+            sc_recalculateSnakeSpeed(id);
+
             // Увеличиваем инпут-лаг (накладываем степень опьянения)
             sc_changeInputLag(global.var_input_lag_increment);
 

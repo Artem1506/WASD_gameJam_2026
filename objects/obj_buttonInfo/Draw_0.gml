@@ -4,180 +4,140 @@ draw_self();
 
 if (show_info == true) {
 
-    var base_x = 750;
+    var base_x = 600;
     var base_y = 50 - scroll_y;
     var spacing = 35;
-    var padding = 50;
+    var padding = 45;
 
     draw_set_font(f_textRus);
     draw_set_halign(fa_left);
     draw_set_valign(fa_top);
 
-    // фон области
+    // фон области (сделан от 575 по оси x)
     draw_set_color(c_black);
     draw_set_alpha(0.8);
-    draw_rectangle(700, 0, 1280, 720, false);
+    draw_rectangle(570, 0, 1280, 720, false);
     draw_set_alpha(1);
 
     // текст
     draw_set_color(c_white);
 
-    draw_text(base_x + padding, base_y,
-    "ИГРА \"ЗЕЛЕНЫЙ ЗМЕЙ\"");
+    var current_y = base_y;
 
-    draw_text(base_x, base_y + spacing,
-    "Разработано командой \"GrampsGamer\"");
+    // ---------------- ЗАГОЛОВОК ----------------
+    draw_text(base_x + padding, current_y, "ИГРА \"ЗЕЛЕНЫЙ ЗМЕЙ\"");
+    current_y += spacing;
 
-    draw_text(base_x, base_y + spacing * 2,
-    "для геймджем.москва 2026");
-
-
+    draw_text(base_x, current_y, "Разработано командой \"GrampsGamer\"");
+    current_y += spacing * 2;
 
     // ---------------- ГЕЙМПЛЕЙ ----------------
+    draw_text(base_x + padding, current_y, "ГЕЙМПЛЕЙ:");
+    current_y += spacing;
 
-    draw_text(base_x + padding, base_y + spacing * 4,
-    "ГЕЙМПЛЕЙ:");
+    draw_text(base_x, current_y, "Змейка перемещается по арене, избегая столкновений");
+    current_y += spacing;
+    draw_text(base_x, current_y, "со стенами и хвостом. Игрок собирает полезные предметы");
+    current_y += spacing;
+    draw_text(base_x, current_y, "и старается избегать испорченного винограда.");
+    current_y += spacing * 2;
 
-    draw_text(base_x, base_y + spacing * 5,
-    "Змейка перемещается по арене, избегает");
+    // ---------------- ЦЕЛЬ ИГРЫ ----------------
+    draw_text(base_x + padding, current_y, "ЦЕЛЬ ИГРЫ:");
+    current_y += spacing;
 
-    draw_text(base_x, base_y + spacing * 6,
-    "столкновений со стенами и собственным");
+    draw_text(base_x, current_y, "Набрать как можно больше очков и продержаться");
+    current_y += spacing;
+    draw_text(base_x, current_y, "максимально долго.");
+    current_y += spacing * 2;
 
-    draw_text(base_x, base_y + spacing * 7,
-    "хвостом. Игрок собирает свежий виноград");
+    // ---------------- УПРАВЛЕНИЕ ----------------
+    draw_text(base_x + padding, current_y, "УПРАВЛЕНИЕ:");
+    current_y += spacing;
 
-    draw_text(base_x, base_y + spacing * 8,
-    "и старается избегать испорченного.");
-
-
-
-    draw_text(base_x + padding, base_y + spacing * 10,
-    "ЦЕЛЬ ИГРЫ:");
-
-    draw_text(base_x, base_y + spacing * 11,
-    "Набрать как можно больше очков");
-
-    draw_text(base_x, base_y + spacing * 12,
-    "и продержаться максимально долго.");
-
-
+    draw_text(base_x, current_y, "Игрок 1: клавиши WASD для движения.");
+    current_y += spacing;
+    draw_text(base_x, current_y, "Игрок 2: клавиши-стрелки для движения.");
+    current_y += spacing * 2;
 
     // ---------------- ПРЕДМЕТЫ ----------------
+    draw_text(base_x + padding, current_y, "ПРЕДМЕТЫ:");
+    current_y += spacing;
 
-    draw_sprite(spr_grapeFresh, 0,
-    base_x, base_y + 16 + spacing * 14);
+    // Fresh grape
+    draw_sprite(spr_grapeFresh, 0, base_x, current_y + 16);
+    draw_text(base_x + padding, current_y, "- Свежий виноград: дает +1 очко к счету и +1 к комбо.");
+    current_y += spacing * 1.5;
 
-    draw_text(base_x + padding,
-    base_y + spacing * 14,
-    "- Свежий виноград: +1 очко.");
+    // Rotten grape
+    draw_sprite(spr_grapeRotten, 0, base_x, current_y + 24);
+    draw_text(base_x + padding, current_y, "- Испорченный виноград: +1 к опьянению и сброс комбо.");
+    current_y += spacing * 1.5;
 
+    // Pill
+    draw_sprite(spr_pill, 0, base_x, current_y + 16);
+    draw_text(base_x + padding, current_y, "- Таблетка: снижает уровень опьянения на 3 пункта");
+    current_y += spacing * 1.5;
 
+    // Helmet
+    draw_sprite(spr_helmet, 0, base_x, current_y + 16);
+    draw_text(base_x + padding, current_y, "- Защитная каска: спасает от одной аварии без потери");
+    current_y += spacing;
+    draw_text(base_x + padding, current_y, "комбо, лага и скорости змейки.");
+    current_y += spacing * 1.5;
 
-    draw_sprite(spr_grapeRotten, 0,
-    base_x, base_y + 16 + spacing * 16);
+    // Cleaner
+    draw_sprite(spr_cleaner, 0, base_x, current_y + 16);
+    draw_text(base_x + padding, current_y, "- Мусорка: уничтожает 50% случайных плохих ягод.");
+    current_y += spacing * 1.5;
 
-    draw_text(base_x + padding,
-    base_y + spacing * 16,
-    "- Испорченный виноград:");
-
-    draw_text(base_x + padding,
-    base_y + spacing * 17,
-    "увеличивает уровень опьянения.");
-
-
-
-    draw_sprite(spr_pill, 0,
-    base_x, base_y + 16 + spacing * 19);
-
-    draw_text(base_x + padding,
-    base_y + spacing * 19,
-    "- Таблетка: снижает уровень");
-
-    draw_text(base_x + padding,
-    base_y + spacing * 20,
-    "опьянения на 3 единицы.");
-
-
+    // Banana
+    draw_sprite(spr_banan, 0, base_x, current_y + 16);
+    draw_text(base_x + padding, current_y, "- Банан: дает +3 очка/комбо, и временно удваивает");
+    current_y += spacing;
+    draw_text(base_x + padding, current_y, "скорость движения.");
+    current_y += spacing * 2;
 
     // ---------------- МЕХАНИКИ ----------------
+    draw_text(base_x + padding, current_y, "МЕХАНИКИ:");
+    current_y += spacing;
 
-    draw_text(base_x + padding,
-    base_y + spacing * 22,
-    "МЕХАНИКИ:");
+    draw_text(base_x, current_y, "Опьянение увеличивает задержку ввода: чем выше лаг,");
+    current_y += spacing;
+    draw_text(base_x, current_y, "тем медленнее змейка реагирует на управление. Игроку");
+    current_y += spacing;
+    draw_text(base_x, current_y, "приходится планировать свои действия заранее.");
+    current_y += spacing;
 
-    draw_text(base_x, base_y + spacing * 23,
-    "Опьянение увеличивает задержку ввода.");
-
-    draw_text(base_x, base_y + spacing * 24,
-    "Чем выше уровень опьянения, тем хуже");
-
-    draw_text(base_x, base_y + spacing * 25,
-    "змейка реагирует на команды игрока.");
-
-    draw_text(base_x, base_y + spacing * 26,
-    "Игроку приходится планировать");
-
-    draw_text(base_x, base_y + spacing * 27,
-    "движение заранее.");
-
-
-    draw_text(base_x, base_y + spacing * 29,
-    "По мере роста счета увеличивается");
-
-    draw_text(base_x, base_y + spacing * 30,
-    "скорость змейки и уменьшается время");
-
-    draw_text(base_x, base_y + spacing * 31,
-    "жизни свежего винограда.");
-
-
-    draw_text(base_x, base_y + spacing * 33,
-    "Столкновения со стенами и хвостом");
-
-    draw_text(base_x, base_y + spacing * 34,
-    "также увеличивают уровень");
-
-    draw_text(base_x, base_y + spacing * 35,
-    "опьянения и замедляют движение");
-
-    draw_text(base_x, base_y + spacing * 36,
-    "змейки.");
-
-
+    draw_text(base_x, current_y, "По мере роста счета увеличивается скорость змейки и");
+    current_y += spacing;
+    draw_text(base_x, current_y, "ускоряется порча винограда. Любые столкновения с");
+    current_y += spacing;
+    draw_text(base_x, current_y, "препятствиями (камни, стены, хвост) останавливают");
+    current_y += spacing;
+    draw_text(base_x, current_y, "движение, сбрасывают комбо и увеличивают лаг.");
+    current_y += spacing * 2;
 
     // ---------------- КОМАНДА ----------------
+    draw_text(base_x + padding, current_y, "КОМАНДА РАЗРАБОТКИ:");
+    current_y += spacing;
 
-    draw_text(base_x + padding,
-    base_y + spacing * 38,
-    "КОМАНДА РАЗРАБОТКИ:");
+    draw_text(base_x, current_y, "- Артем Ваулин - продюсер, геймдизайнер, программист");
+    current_y += spacing;
 
-    draw_text(base_x, base_y + spacing * 39,
-    "- Артем Ваулин - продюсер,");
+    draw_text(base_x, current_y, "- Василий Казаков - композитор, саунд-дизайнер");
+    current_y += spacing;
 
-    draw_text(base_x, base_y + spacing * 40,
-    "геймдизайнер, программист");
-
-    draw_text(base_x, base_y + spacing * 42,
-    "- Василий Казаков - композитор,");
-
-    draw_text(base_x, base_y + spacing * 43,
-    "саунд-дизайнер");
-
-    draw_text(base_x, base_y + spacing * 45,
-    "- Павел Artmoogl - художник, аниматор");
+    draw_text(base_x, current_y, "- Павел Artmoogl - художник, аниматор");
+    current_y += spacing * 2;
 
     // ---------------- ПЛЕЙТЕСТЫ ----------------
+    draw_text(base_x + padding, current_y, "ПЛЕЙТЕСТЫ:");
+    current_y += spacing;
 
-    draw_text(base_x + padding,
-    base_y + spacing * 47,
-    "ПЛЕЙТЕСТЫ:");
+    draw_text(base_x, current_y, "- RodjerX  (https://t.me/myArduinoProj)");
+    current_y += spacing * 2;
 
-    draw_text(base_x, base_y + spacing * 48,
-    "- RodjerX");
-    draw_text(base_x + padding, base_y + spacing * 49,
-    "https://t.me/myArduinoProj");
-	
-	draw_text(base_x, base_y + spacing * 51,
-	"v. " + GM_version)
+    // ---------------- ВЕРСИЯ ----------------
+    draw_text(base_x, current_y, "v. " + GM_version);
 }

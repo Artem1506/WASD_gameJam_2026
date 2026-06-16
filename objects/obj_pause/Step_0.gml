@@ -11,7 +11,7 @@ if (is_paused)
 {
     scroll_y += mouse_wheel_down() * scroll_speed;
     scroll_y -= mouse_wheel_up() * scroll_speed;
-    scroll_y = clamp(scroll_y, 0, 1200);
+    scroll_y = clamp(scroll_y, 0, 970);
 }
 
 // 2. Реагируем на изменение состояния паузы (включая переключения из кнопок)
