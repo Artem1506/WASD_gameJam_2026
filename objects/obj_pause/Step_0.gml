@@ -41,6 +41,7 @@ if (is_paused != last_paused)
         // Деактивируем все объекты, кроме этого контроллера и менеджера звуков
         instance_deactivate_all(true);
         instance_activate_object(obj_audioManger);
+        instance_activate_object(obj_virtualButton);
         
         // Создаем кнопки меню паузы на HUD слое
         var HUD_layer = "HUD";

@@ -36,5 +36,6 @@ if (device_mouse_check_button(0, mb_left)) {
 		mouse_x, mouse_y,
 		btn_exit.x1s, btn_exit.y1s,
 		btn_exit.x2s, btn_exit.y2s
-	)) { exit_down = true; }
+	) && obj_pause.is_paused != true) { 
+		exit_down = true; }
 }	
