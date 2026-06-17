@@ -25,7 +25,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.4.222",
+    "IDEVersion":"2026.0.0.16",
   },
   "name":"Artem1506WASD_gameJam_2026",
   "resources":[
@@ -60,6 +60,7 @@
     {"id":{"name":"obj_snakeHead","path":"objects/obj_snakeHead/obj_snakeHead.yy",},},
     {"id":{"name":"obj_snakeSegment","path":"objects/obj_snakeSegment/obj_snakeSegment.yy",},},
     {"id":{"name":"obj_stone","path":"objects/obj_stone/obj_stone.yy",},},
+    {"id":{"name":"obj_virtualButton","path":"objects/obj_virtualButton/obj_virtualButton.yy",},},
     {"id":{"name":"ps_combo","path":"particles/ps_combo/ps_combo.yy",},},
     {"id":{"name":"ps_pill","path":"particles/ps_pill/ps_pill.yy",},},
     {"id":{"name":"rm_2Players","path":"rooms/rm_2Players/rm_2Players.yy",},},
@@ -123,6 +124,7 @@
     {"id":{"name":"ui_buttonExit_hovered","path":"sprites/ui_buttonExit_hovered/ui_buttonExit_hovered.yy",},},
     {"id":{"name":"ui_buttonExit_normal","path":"sprites/ui_buttonExit_normal/ui_buttonExit_normal.yy",},},
     {"id":{"name":"ui_buttonExit_pressed","path":"sprites/ui_buttonExit_pressed/ui_buttonExit_pressed.yy",},},
+    {"id":{"name":"ui_buttonExit","path":"sprites/ui_buttonExit/ui_buttonExit.yy",},},
     {"id":{"name":"ui_buttonInfo_hovered","path":"sprites/ui_buttonInfo_hovered/ui_buttonInfo_hovered.yy",},},
     {"id":{"name":"ui_buttonInfo_normal","path":"sprites/ui_buttonInfo_normal/ui_buttonInfo_normal.yy",},},
     {"id":{"name":"ui_buttonInfo_pressed","path":"sprites/ui_buttonInfo_pressed/ui_buttonInfo_pressed.yy",},},

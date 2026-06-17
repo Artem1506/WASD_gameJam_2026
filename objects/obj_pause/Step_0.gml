@@ -1,7 +1,7 @@
 /// @description Управление состоянием паузы и активацией объектов
 
 // 1. Переключение состояния по клавише Esc
-if (keyboard_check_pressed(vk_escape))
+if (keyboard_check_pressed(vk_escape) || obj_virtualButton.exit_down)
 {
     is_paused = !is_paused;
 }

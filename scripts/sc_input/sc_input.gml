@@ -45,10 +45,10 @@ function sc_addInputCommand()
     // Опрашиваем клавиши в зависимости от того, какая это змейка
     if (object_index == obj_snakeHead)
     {
-        pressed_up = keyboard_check_pressed(ord("W"));
-        pressed_down = keyboard_check_pressed(ord("S"));
-        pressed_left = keyboard_check_pressed(ord("A"));
-        pressed_right = keyboard_check_pressed(ord("D"));
+        pressed_up = keyboard_check_pressed(ord("W")) || obj_virtualButton.up_down;
+        pressed_down = keyboard_check_pressed(ord("S")) || obj_virtualButton.down_down;
+        pressed_left = keyboard_check_pressed(ord("A")) || obj_virtualButton.left_down;
+        pressed_right = keyboard_check_pressed(ord("D")) || obj_virtualButton.right_down;
     }
     else // obj_snakeHead_2
     {
