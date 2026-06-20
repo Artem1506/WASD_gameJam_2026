@@ -25,7 +25,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.14.4.222",
+    "IDEVersion":"2026.0.0.16",
   },
   "name":"Artem1506WASD_gameJam_2026",
   "resources":[
@@ -108,6 +108,7 @@
     {"id":{"name":"spr_pill","path":"sprites/spr_pill/spr_pill.yy",},},
     {"id":{"name":"spr_snakeHead_2","path":"sprites/spr_snakeHead_2/spr_snakeHead_2.yy",},},
     {"id":{"name":"spr_snakeHead","path":"sprites/spr_snakeHead/spr_snakeHead.yy",},},
+    {"id":{"name":"spr_snakeHeadEat_2","path":"sprites/spr_snakeHeadEat_2/spr_snakeHeadEat_2.yy",},},
     {"id":{"name":"spr_snakeHeadEat","path":"sprites/spr_snakeHeadEat/spr_snakeHeadEat.yy",},},
     {"id":{"name":"spr_snakeSegment_2","path":"sprites/spr_snakeSegment_2/spr_snakeSegment_2.yy",},},
     {"id":{"name":"spr_snakeSegment","path":"sprites/spr_snakeSegment/spr_snakeSegment.yy",},},
