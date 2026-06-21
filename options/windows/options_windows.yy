@@ -31,7 +31,7 @@
   "option_windows_texture_page":"2048x2048",
   "option_windows_use_raw_mouse":false,
   "option_windows_use_splash":false,
-  "option_windows_version":"2.0.0.1406",
+  "option_windows_version":"2.1.0.2006",
   "option_windows_vsync":true,
   "resourceType":"GMWindowsOptions",
   "resourceVersion":"2.0",
