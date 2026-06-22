@@ -130,6 +130,7 @@
     {"id":{"name":"ui_buttonExit_hovered","path":"sprites/ui_buttonExit_hovered/ui_buttonExit_hovered.yy",},},
     {"id":{"name":"ui_buttonExit_normal","path":"sprites/ui_buttonExit_normal/ui_buttonExit_normal.yy",},},
     {"id":{"name":"ui_buttonExit_pressed","path":"sprites/ui_buttonExit_pressed/ui_buttonExit_pressed.yy",},},
+    {"id":{"name":"ui_buttonExit","path":"sprites/ui_buttonExit/ui_buttonExit.yy",},},
     {"id":{"name":"ui_buttonInfo_hovered","path":"sprites/ui_buttonInfo_hovered/ui_buttonInfo_hovered.yy",},},
     {"id":{"name":"ui_buttonInfo_normal","path":"sprites/ui_buttonInfo_normal/ui_buttonInfo_normal.yy",},},
     {"id":{"name":"ui_buttonInfo_pressed","path":"sprites/ui_buttonInfo_pressed/ui_buttonInfo_pressed.yy",},},
